@@ -16,22 +16,28 @@
 # 开源价值
 
 1. 播放器代码
-见文件夹：player/
+
+   见文件夹：player/
 
 2. 网络请求代码
-见文件夹：network/
+
+   见文件夹：network/
 
 3. 论坛代码
-见文件夹: pages/subject
+
+   见文件夹: pages/subject
 
 4. mv 代码（视频播放）
-见文件夹：pages/mv
+ 
+   见文件夹：pages/mv
 
 5. 歌词海报代码
-见文件夹：pages/music/postcard
+ 
+   见文件夹：pages/music/postcard
 
 6. 歌词lbric解析
-见文件夹：pages/music/lyric
+
+   见文件夹：pages/music/lyric
 
 本小程序拥有周杰伦几乎所有音乐。由于版本问题，已限制线上播放功能。
 若对本项目有兴趣，可以添加作者微信：aslan_hu
