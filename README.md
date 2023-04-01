@@ -13,7 +13,7 @@
 ![IMG_5430](https://user-images.githubusercontent.com/1904655/229292030-b2bc5cf9-b879-4878-8777-9e6fa4dee3fa.jpg)
 
 
-#开源价值
+# 开源价值
 
 1. 播放器代码
 见文件夹：player/
@@ -36,7 +36,7 @@
 本小程序拥有周杰伦几乎所有音乐。由于版本问题，已限制线上播放功能。
 若对本项目有兴趣，可以添加作者微信：aslan_hu
 
-赞赏作者：
+# 赞赏作者：
 
 ![WechatIMG200](https://user-images.githubusercontent.com/1904655/229292053-da7246dd-33b2-4df1-ae60-891a5eb484f1.jpeg)
 
