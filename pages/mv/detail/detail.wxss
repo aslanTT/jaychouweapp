@@ -1,0 +1,92 @@
+page {
+  background-color: #55433f;
+}
+.detail {
+  color: #ffffff;
+}
+/* 视频播放器 */
+.videoPlayer {
+  position: fixed;
+  top:0;
+  width: 100%;
+  z-index: 100;
+}
+.videoPlayer video {
+  width: 100%;
+}
+/* content 下面 */
+/* 视频介绍 */
+.content {
+  overflow-y: scroll;
+  background-color: #55433f;
+}
+.introduce {
+  padding: 30rpx;
+  border-bottom: 2rpx solid #55433f;
+  font-size: 26rpx;
+}
+
+.introduce-title-view {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.introduce-title-left {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+}
+
+.introduce-title-left .introduce-title {
+  display: block;
+  font-size: 38rpx;
+}
+
+.introduce-title-left .tag {
+  display: block;
+  color: #e9e6e1;
+  margin: 10rpx 0;
+}
+
+.introduce-title-right {
+  margin-right: 10rpx;
+  margin-left: 10rpx;
+  padding-left: 0rpx;
+  padding-right: 0rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background: #55433f;
+  min-width: 60rpx;
+}
+
+.introduce-title-right .share-icon {
+  width: 60rpx;
+  height: 60rpx;
+}
+
+.recommend-item {
+  padding: 20rpx 0;
+  display: flex;
+  justify-content: space-evenly;
+}
+.cover {
+  width: 310rpx;
+  height: 180rpx; 
+  border-radius: 10rpx;
+}
+.text {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+
+  width: 45%;
+  font-size: small;
+}
+.text-title {
+  font-weight: bold;
+  display: block;
+}

@@ -1,0 +1,61 @@
+<view class="container">
+  <view class="mine-header" bindtap="didClickEditSign">
+    <view class="name-view">
+      <image class="wx-avatar" src="{{avatar}}"></image>
+      <view class="text-view">
+        <text class="name-text">{{name}}</text>
+      </view>
+    </view>
+    <text class="iconfont previewright right-icon"/>
+  </view>
+  <view class="item-views">
+    <view class="item-view" bindtap="didClickMineCollectList">
+      <text class="item-title">我收藏的歌曲</text>
+      <text class="iconfont previewright right-icon"/>
+    </view>
+    <view class="border-line" />
+    <view class="item-view" bindtap="didClickMineListenList">
+      <text class="item-title">我听过的歌曲</text>
+      <text class="iconfont previewright right-icon"/>
+    </view>
+    <view class="border-line" />
+    <view class="item-view" bindtap="didClickMineSubjectList">
+      <text class="item-title">我发布的说说</text>
+      <text class="iconfont previewright right-icon"/>
+    </view>
+  </view>
+  <view class="item-views">
+    <view class="item-view" bindtap="didClickPublic">
+      <text class="item-title">关注公众号</text>
+      <text class="iconfont previewright right-icon"/>
+    </view>
+    <view class="border-line" />
+    <view class="item-view" bindtap="didClickAppsList">
+      <text class="item-title">精品推荐</text>
+      <text class="iconfont previewright right-icon"/>
+    </view>
+    <view class="border-line" />
+    <view class="item-view" bindtap="didClickShop">
+      <text class="item-title">周边商品</text>
+      <text class="iconfont previewright right-icon"/>
+    </view>
+  </view>
+  <view class="item-views">
+    <view class="item-view" bindtap="didClickFeedback">
+      <text class="item-title">留言建议</text>
+      <text class="iconfont previewright right-icon"/>
+    </view>
+    <view class="border-line" />
+    <view class="item-view">
+      <text class="item-title">邀请好友</text>
+      <text class="iconfont previewright right-icon"/>
+      <button class="share-button" open-type="share"></button>
+    </view>
+    <view class="border-line" />
+    <view class="item-view">
+      <text class="item-title">联系客服</text>
+      <text class="iconfont previewright right-icon"/>
+      <button class="contact-button" open-type="contact"></button>
+    </view>
+  </view>
+</view>

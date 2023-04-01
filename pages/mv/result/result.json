@@ -1,0 +1,7 @@
+{
+  "navigationBarTextStyle": "black",
+  "navigationBarBackgroundColor": "#f0f0f0",
+  "usingComponents": {
+    "video-list": "../component/videoList/videoList"
+  }
+}

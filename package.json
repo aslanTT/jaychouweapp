@@ -1,0 +1,21 @@
+{
+  "name": "jaychou",
+  "version": "1.0.0",
+  "description": "jaychou music",
+  "main": "app.js",
+  "scripts": {
+    "test": "npm "
+  },
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@nas.fiyou.cn:30001/highpub/weapp.git"
+  },
+  "miniprogram":"src",
+  "keywords": [
+    "jaychou"
+  ],
+  "author": "aslan",
+  "license": "ISC",
+  "dependencies": {
+  }
+}

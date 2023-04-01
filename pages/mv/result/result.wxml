@@ -1,0 +1,22 @@
+
+
+<navigation id='Navigation' show-icon="{{true}}"  title="{{keyword}}" show-title="{{true}}" class=""></navigation>
+
+<view class="container" hidden="{{loading}}">
+  <block wx:if="{{resultList.length == 0}}">
+    <view class="no-content">
+      <view class="no-content-font">暂无"{{keyword}}"相关 MV，换个关键词试试</view>
+    </view>
+  </block>
+  <block wx:else>
+    <video-list style="width: 100%;" bindtoDetail="toVideoDetail" videoList="{{resultList}}"></video-list>
+    <view class="loading-tip">
+      <block wx:if="{{hasMore}}">
+        加载中...
+      </block>
+      <block wx:else>
+        没有更多了
+      </block>
+    </view>
+  </block>
+</view>

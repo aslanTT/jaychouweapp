@@ -1,0 +1,42 @@
+<template name="subject-cell">
+  <view class="subject-cell" bindtap="didTapSubjectCell" data-subject-id="{{subject.objectId}}">
+    <view class="title-view">
+      <text class="title-text">{{subject.title||subject.content}}</text>
+    </view>
+    <view class="image-view" wx:if="{{subject.imgs.length>0}}">
+        <block wx:if="{{subject.imgs.length == 1}}">
+          <image lazy-load="true" mode="aspectFill" src="{{subject.imgs[0]}}" class="single-image" />
+        </block>
+        <block wx:else>
+          <image lazy-load="true" mode="aspectFill" src="{{item}}" class="multi-image" wx:for="{{subject.imgs}}" wx:key="item"/>
+        </block>
+    </view>
+    <view class="voice-view" wx:elif="{{subject.voice}}">
+      <view class="audio-view">
+        <view class='audio' style="width: 200rpx;margin-left:0rpx;">
+          <image class='ico' src='/image/yuyin-ico.png' />
+          <label class='time'>{{subject.voice.duration}}</label>
+        </view>
+      </view>
+    </view>
+    <view class="video-view" wx:elif="{{subject.video}}">
+      <image lazy-load="true" mode="aspectFill" src="{{subject.video.cover}}" class="single-video-image" />
+      <text class="iconfont play video-icon" />
+      <text class="duration-text">{{subject.video.duration}}</text>
+    </view>
+    <view class="kpi-view">
+      <view class="hot-view">
+        <view class="comment-view">
+          <text class="iconfont tubiaozhizuo comment-icon"/>
+          <text class="comment-num">{{subject.hot}}</text>
+        </view>
+        <view class="update-view">
+          <text class="iconfont shijian update-icon"/>
+          <text class="time-num">{{subject.updatedTime}}</text>
+        </view>
+      </view>
+      <text class="owner-text">楼主 | {{subject.owner.nickName}}</text>
+    </view>
+    <view class="border-line"/>
+  </view>
+</template>

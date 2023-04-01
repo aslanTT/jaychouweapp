@@ -1,0 +1,22 @@
+<view class="container">
+  <view class="search-view">
+    <text class="iconfont sousuoxiangqing search-icon-size"></text>
+    <input class="search-text-input" placeholder-style="font-size:14px;color:#ccc" placeholder='输入标题、作者关键字' bindinput='searchWordChange' confirm-type="search" bindconfirm="didClickSearchButton" auto-focus='{{true}}'></input>
+  </view>
+  <view class="read-hot-word-view" wx:if="{{wordList.length>0}}">
+    <text class="read-search-title">大家都在搜</text>
+    <view class="read-hot-word-items">
+     <button class="read-hot-word-item" wx:for="{{wordList}}" wx:key="item" bindtap="didClickWordItem" data-word="{{item}}">{{item}}</button>
+    </view>
+  </view>
+  <view class="read-hot-list-view" wx:if="{{hotList.length>0}}">
+    <view class="read-hot-title">热点资讯</view>
+    <view class="read-hot-item-view" hover-class='read-hot-item-hover-view' wx:for="{{hotList}}" wx:key="item" bindtap='didClickHotItem' data-index="{{index}}">
+      <text class="read-hot-item-text">{{item.title}}</text>
+      <view class="hot-read-number-view">
+        <text class="iconfont linedesign-14 read-icon"/>
+        <text class="read-number-text">{{item.read}}</text>
+      </view>
+    </view>
+  </view>
+</view>

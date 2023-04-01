@@ -1,0 +1,18 @@
+<wxs src="./cell.wxs" module="tools" />
+
+<template name="notice-cell">
+  <view class="notice-cell" bindtap="didTapNoticeCell" data-index="{{index}}">
+    <view class="notice-content-view">
+      <view class="notice-left-view">
+        <view class="notice-count" wx:if="{{notice.badge > 1}}">{{notice.badge}}</view>
+        <view class="notice-content">最新的回复: {{notice.content}}</view>
+      </view>
+      <view class="message-view"> 
+        <image class="image-view" wx:if="{{tools.image(notice).length > 0}}" src="{{tools.image(notice)}}"/>
+        <text class="text-view" wx:elif="{{tools.text(notice).length > 0}}">{{tools.text(notice)}}</text>
+        <text class="text-view" wx:else>有最新的留言</text>
+      </view>
+    </view>
+    <view class="border-line"/>
+  </view>
+</template>

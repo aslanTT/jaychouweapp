@@ -1,0 +1,24 @@
+<import src="../../music/songs/song-cell/cell.wxml"/>
+<import src="collect.skeleton.wxml"/>
+<template is="skeleton" wx-if="{{loading}}" />
+
+<view class="container" wx:if="{{!loading}}">
+  <view class="no-content" style="margin-top:400rpx;" wx:if="{{list.length == 0}}">
+    <view class="no-content-font">暂无收藏</view>
+  </view>
+  <view class="content-view">
+    <block wx:for="{{list}}" wx:key="item">
+      <view class="music-cell-view">
+        <template is="music-cell" data="{{music:item, strategy:0, selectMode: false}}"/>
+      </view>
+    </block>
+    <view class="loading-tip" wx:if="{{list.length>0}}">
+      <block wx:if="{{hasMore}}">
+        加载中...
+      </block>
+      <block wx:else>
+        没有更多了
+      </block>
+    </view>
+  </view>
+</view>

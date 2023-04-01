@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "pannel": "/component/canvas/pannel"
+  },
+  "navigationBarTitleText": "制作海报"
+}

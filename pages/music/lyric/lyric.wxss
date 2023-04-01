@@ -1,0 +1,120 @@
+page {
+  background-color: #f0f0f0;
+}
+
+.body {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.weapp-title {
+  position: fixed;
+}
+
+.back-icon {
+  font-size: 42rpx;
+  color: white;
+  margin-left: 20rpx;
+}
+
+.background_img { 
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  filter: blur(50px);
+  z-index: -2;
+  transform: scale(1.5); 
+}
+
+.mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: -1;
+}
+
+.music-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-top:180rpx;
+}
+
+.music-view {
+  margin: 50rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.cover-view {
+  min-width: 140rpx;
+  min-height: 140rpx;
+  max-width: 140rpx;
+  max-height: 140rpx;
+  border-radius: 12rpx;
+}
+
+.music-info-view {
+  margin-left: 30rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.music-name {
+  font-size: 36rpx;
+  color: white;
+  font-weight: bold;
+}
+
+.album-name {
+  font-size: 28rpx;
+  color: #999999;
+  margin-top: 10rpx;
+}
+
+.duration-view {
+  width: 100%;
+  text-align: center;
+  color: white;
+  font-size: 32rpx;
+}
+
+.content-view {
+  margin-top: 20rpx;
+  margin-bottom: 70rpx;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  min-width: 100%;
+  height: 1050rpx;
+}
+
+.lyric-text {
+  color: #979393;
+  text-align: center;
+  font-size: 36rpx;
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+}
+
+.currentTime {
+  color: white;
+  font-size: 42rpx;
+  font-weight: bold;
+}

@@ -1,0 +1,41 @@
+<import src="./cell/cell.wxml"/>
+<import src="../../component/request-loading/loading.wxml"/>
+
+<template is="request-loading" wx:if="{{loading}}"/>
+
+<view class="container" wx:if="{{!loading}}">
+  <text class="message-tip">只保留最近16个小时的对话</text>
+  <block wx:if="{{list.length == 0}}">
+    <view class="no-content" style="margin-top:400rpx;">
+      <view class="no-content-font">暂无最新的留言</view>
+    </view>
+  </block>
+  <block wx:else>
+    <view class="message-list-view">
+      <template is="message-cell" wx:for="{{list}}" wx:key="item" data="{{message:item, index:index, userId:userId, fromId:item.fromuserId}}"/>
+    </view>
+  </block>
+</view>
+
+
+<view class="comment-area-view" style="{{isIpx?'height:124rpx;':'height: 100rpx;'}}">
+  <button class="comment-button" bindtap="didClickComment">留言...</button>
+  <text class="iconfont refresh refresh-icon" bindtap="didClickRefresh"></text>
+</view>
+
+<view class="comment-input-view" wx:if="{{commentShow}}" catchtap="preventTap" catchtouchmove="preventTap">
+  <view class="comment-input-area-view" catchtap="preventInputAreaTap" catchtouchmove="preventInputAreaTap">
+    <textarea class="comment-input" placeholder="留言...(0~80个汉字)" placeholder-class="input-placeholder" maxlength="80" bindinput="onContentInput" value="{{content}}" fixed="{{true}}" auto-focus />
+    <view class="border-line"/>
+    <view class="comment-imags-select-view">
+      <text class="iconfont tupian select-image-button" bindtap="didClickSelectImage"/>
+      <button class="send-button" hover-class="hover-button" bindtap="onConfirmSubmit">提交</button>
+    </view>
+    <view class="publish-images" wx:if="{{image.length > 0}}">
+      <view class="publish-image-item">
+        <image class="publish-image" src="{{image}}" bindtap="didClickPreviewUploadImage" />
+        <text class="iconfont shanchu delete-button" bindtap="didClickDeleteImage"/>
+      </view>
+    </view>
+  </view>
+</view>

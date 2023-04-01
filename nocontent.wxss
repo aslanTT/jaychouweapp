@@ -1,0 +1,57 @@
+
+.no-content {
+  padding-top : 100rpx;
+  padding-bottom : 100rpx;
+  margin-top: 150rpx;
+  color:#a0a0a0;
+  width: 100%;
+}
+
+.no-content-icon { 
+  padding-left: 120rpx;
+  padding-right: 120rpx;
+  font-family:"iconfont" !important;
+  font-size:200rpx;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.no-content-font { 
+	font-size: 30rpx; 
+	text-align:center;
+	margin-top:30rpx; 
+  width: 100%;
+}
+
+.no-content-body {
+  font-size: 40rpx; 
+	text-align:center;
+	margin-top:30rpx; 
+  width: 100%;
+  font-weight: bolder;
+  color: red;
+}
+
+.no-content-button {
+  margin-top: 80rpx;
+  color: black !important;
+  background: #ffffff;
+  border-radius: 8px;
+  border:1px solid black; 
+  width: 260rpx;
+  height: 100rpx;
+}
+
+.no-content-button-hover {
+  background: #999999
+}
+
+.loading-tip {
+  margin-top: 24rpx;
+  padding-bottom: 30rpx;
+  color: #a0a0a0;
+  font-size: 24rpx;
+  width:100%;
+  text-align: center;
+}

@@ -1,0 +1,62 @@
+/*
+此文件为开发者工具生成，生成时间: 1/30/2022, 8:27:41 PM
+
+在 /Users/aslan/Code/jaychou/weapp/pages/essay/list/list.wxss 中引入样式
+```
+@import "./list.skeleton.wxss";
+```
+
+更多详细信息可以参考文档：https://developers.weixin.qq.com/miniprogram/dev/devtools/skeleton.html
+*/
+.sk-transparent {
+    color: transparent !important;
+  }
+.sk-text-13-6364-513 {
+    background-image: linear-gradient(transparent 13.6364%, #EEEEEE 0%, #EEEEEE 86.3636%, transparent 0%) !important;
+    background-size: 100% 44.0000rpx;
+    position: relative !important;
+  }
+.sk-text {
+    background-origin: content-box !important;
+    background-clip: content-box !important;
+    background-color: transparent !important;
+    color: transparent !important;
+    background-repeat: repeat-y !important;
+  }
+.sk-text-13-6364-316 {
+    background-image: linear-gradient(transparent 13.6364%, #EEEEEE 0%, #EEEEEE 86.3636%, transparent 0%) !important;
+    background-size: 100% 44.0000rpx;
+    position: relative !important;
+  }
+.sk-text-13-6364-559 {
+    background-image: linear-gradient(transparent 13.6364%, #EEEEEE 0%, #EEEEEE 86.3636%, transparent 0%) !important;
+    background-size: 100% 44.0000rpx;
+    position: relative !important;
+  }
+.sk-text-13-6364-743 {
+    background-image: linear-gradient(transparent 13.6364%, #EEEEEE 0%, #EEEEEE 86.3636%, transparent 0%) !important;
+    background-size: 100% 44.0000rpx;
+    position: relative !important;
+  }
+.sk-text-13-6364-533 {
+    background-image: linear-gradient(transparent 13.6364%, #EEEEEE 0%, #EEEEEE 86.3636%, transparent 0%) !important;
+    background-size: 100% 44.0000rpx;
+    position: relative !important;
+  }
+.sk-text-13-6364-268 {
+    background-image: linear-gradient(transparent 13.6364%, #EEEEEE 0%, #EEEEEE 86.3636%, transparent 0%) !important;
+    background-size: 100% 44.0000rpx;
+    position: relative !important;
+  }
+.sk-image {
+    background: #EFEFEF !important;
+  }
+.sk-container {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: transparent;
+  }

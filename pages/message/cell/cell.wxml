@@ -1,0 +1,16 @@
+<template name="message-cell">
+  <view class="message-cell">
+    <view class="partner-view" wx:if="{{fromId == userId}}">
+      <view class="content-view partner-eyes" wx:if="{{message.content && message.content.length > 0}}">
+        <text>{{message.content}}</text>
+      </view>
+      <image class="image-view {{message.content && message.content.length > 0 ? 'inner-image-top' : ''}}" src="{{message.image}}" mode='widthFix' wx:if="{{message.image && message.image.length > 0}}" bindtap="didClickImage" data-image="{{message.image}}"></image>
+    </view>
+    <view class="my-view" wx:else> 
+      <view class="content-view my-eyes" wx:if="{{message.content && message.content.length > 0}}">
+        <text>{{message.content}}</text>
+      </view>
+      <image class="image-view {{message.content && message.content.length > 0 ? 'inner-image-top' : ''}}" src="{{message.image}}" mode='widthFix' wx:if="{{message.image && message.image.length > 0}}" bindtap="didClickImage" data-image="{{message.image}}"></image>
+    </view>
+  </view>
+</template>

@@ -1,0 +1,43 @@
+@import "./song-cell/cell.wxss";
+
+.content-view {
+  display: flex;
+  /* flex: 1; */
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  min-width: 100%;
+}
+
+.music-cell-view {
+  display: flex;
+  flex: 1;
+  min-width: 100%;
+}
+
+.search-view {
+  background-color: white;
+  height: 120rpx;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.search-border {
+  margin: 20rpx;
+  flex: 1;
+  height: 80rpx;
+  border-radius: 40rpx;
+  border: 2rpx #e0e0e0 solid;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.search-placeholder {
+  font-size: 32rpx;
+  color: #a0a0a0;
+}

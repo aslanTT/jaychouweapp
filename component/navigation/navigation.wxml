@@ -1,0 +1,14 @@
+<view style="height:{{titleBarHeight}}px;padding-top:{{statusBarHeight}}px;">
+  <view class="header" style="height:{{titleBarHeight}}px;padding-top:{{statusBarHeight}}px;background-color:{{backgroundColor}};">
+    <view wx:if="{{showIcon}}" class="title-bar">
+      <view class="back" bindtap="headerBack"><image src="./img/left.png"></image></view>
+      <view class="line"></view>
+      <view class="home" bindtap="headerHome"><image src="./img/home.png"></image></view>
+    </view>
+    <view wx:if="{{showTitle}}" class="header-title">{{title}}</view>
+		<view wx:if="{{showSearch}}" class="search-box" bindtap="headerSearch" style="height:{{boxHeight}}px;">
+      <image src="./img/search.png"></image>
+      <text>{{placeholder}}</text>
+    </view>
+  </view>
+</view>

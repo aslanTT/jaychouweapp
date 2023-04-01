@@ -1,0 +1,135 @@
+
+.container {
+  justify-content:flex-start;
+  align-items: center;
+}
+
+.search-view {
+  margin-top: 80rpx;
+  height: 50px;
+  width: 88vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  border-radius: 12rpx;
+  box-shadow: 0px 0px 6px #C0C0C0;
+}
+
+.search-text-input {
+  margin-left: 10px;
+  margin-right: 10px;
+  width: 90%;
+  height: 30px;
+  font-size: 16px;
+  color: #333;
+}
+
+.search-icon-size {
+  margin-left: 15px;
+  font-size: 20px;
+  color: #333;
+}
+
+.read-hot-list-view {
+  margin:40rpx;
+  padding-bottom: 20rpx;
+  margin-top: -20rpx;
+  border-radius: 8rpx;
+  background-color: white;
+}
+
+.read-hot-item-hover-view {
+  opacity: 0.5
+}
+
+.read-hot-title {
+  margin:20rpx;
+  padding-bottom: 20rpx;
+  border-bottom: 1rpx #e2e2e2 solid;
+  color:#3E4A59;
+}
+
+.read-hot-item-view {
+  width: 100%;
+  height: 80rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.read-hot-item-text {
+  color: #3E4A59;
+  flex:1;
+  display: -webkit-box;
+  word-break: break-all;
+  overflow: hidden; 
+  text-overflow: ellipsis;            
+  -webkit-box-orient: vertical;    
+  -webkit-line-clamp: 1; 
+  margin-left:20rpx;
+  font-size: 26rpx;
+}
+
+.read-search-title {
+  margin-left:40rpx;
+  font-size: 32rpx;
+  color: #3E4A59;
+}
+
+.hot-read-number-view {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  margin-right: 30rpx;
+  margin-left: 20rpx;
+  white-space: nowrap;
+}
+
+.read-icon {
+  font-size: 28rpx;
+  color: #3E4A59;
+}
+
+.read-number-text {
+  margin-left: 15rpx;
+  color: #3E4A59;
+  font-size: 28rpx;
+}
+
+.read-hot-word-view {
+  margin-top: 40rpx;
+  margin-bottom: 40rpx;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.read-hot-word-items {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-top: 20rpx;
+  margin-left: 40rpx;
+  margin-right: 40rpx;
+}
+
+.read-hot-word-item {
+  margin-right: 16rpx;
+  margin-bottom: 20rpx;
+  background: #f0f0f0 !important;
+  color: #888888;
+  border-radius: 8rpx;
+  border: 2rpx #888888 solid;
+  height: 50rpx;
+  line-height: 50rpx;
+  font-size: 28rpx;
+  padding-left: 10rpx;
+  padding-right: 10rpx;
+  white-space: nowrap;
+  font-family: PingFangSC-Regular;
+}

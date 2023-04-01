@@ -1,0 +1,100 @@
+<!--
+此文件为开发者工具生成，生成时间: 3/6/2022, 1:43:23 PM
+使用方法：
+在 /Users/aslan/Code/jaychou/weapp/pages/mine/collect/collect.wxml 引入模板
+
+```
+<import src="collect.skeleton.wxml"/>
+<template is="skeleton" wx-if="{{loading}}" />
+```
+
+在 /Users/aslan/Code/jaychou/weapp/pages/mine/collect/collect.wxss 中引入样式
+```
+@import "./collect.skeleton.wxss";
+```
+
+更多详细信息可以参考文档：https://developers.weixin.qq.com/miniprogram/dev/devtools/skeleton.html
+-->
+<template name="skeleton">
+  <view class="sk-container">
+    <view class="container">
+      <view class="content-view">
+        <view class="music-cell-view">
+          <view class="music-cell" data-music-id="61ec787f328d186424af1cb5">
+            <text class="music-title sk-transparent sk-text-14-2857-339 sk-text">浪漫手机</text>
+            <text class="music-album sk-transparent sk-text-14-2857-625 sk-text">十一月的萧邦</text>
+            <view class="border-line"></view>
+          </view>
+        </view>
+        <view class="music-cell-view">
+          <view class="music-cell" data-music-id="61ec7884328d186424af1cb6">
+            <text class="music-title sk-transparent sk-text-14-2857-148 sk-text">一路向北</text>
+            <text class="music-album sk-transparent sk-text-14-2857-980 sk-text">十一月的萧邦</text>
+            <view class="border-line"></view>
+          </view>
+        </view>
+        <view class="music-cell-view">
+          <view class="music-cell" data-music-id="61ec7788f61d191dff7fad23">
+            <text class="music-title sk-transparent sk-text-14-2857-841 sk-text">说了再见</text>
+            <text class="music-album sk-transparent sk-text-14-2857-289 sk-text">跨时代</text>
+            <view class="border-line"></view>
+          </view>
+        </view>
+        <view class="music-cell-view">
+          <view class="music-cell" data-music-id="61ec778b54971e406acfbede">
+            <text class="music-title sk-transparent sk-text-14-2857-362 sk-text">好久不见</text>
+            <text class="music-album sk-transparent sk-text-14-2857-550 sk-text">跨时代</text>
+            <view class="border-line"></view>
+          </view>
+        </view>
+        <view class="music-cell-view">
+          <view class="music-cell" data-music-id="61ec778ff61d191dff7fad25">
+            <text class="music-title sk-transparent sk-text-14-2857-387 sk-text">我落泪情绪零碎</text>
+            <text class="music-album sk-transparent sk-text-14-2857-750 sk-text">跨时代</text>
+            <view class="border-line"></view>
+          </view>
+        </view>
+        <view class="music-cell-view">
+          <view class="music-cell" data-music-id="61ec778c54971e406acfbedf">
+            <text class="music-title sk-transparent sk-text-14-2857-778 sk-text">雨下一整晚</text>
+            <text class="music-album sk-transparent sk-text-14-2857-447 sk-text">跨时代</text>
+            <view class="border-line"></view>
+          </view>
+        </view>
+        <view class="music-cell-view">
+          <view class="music-cell" data-music-id="61ec7792328d186424af1c3b">
+            <text class="music-title sk-transparent sk-text-14-2857-153 sk-text">超人不会飞</text>
+            <text class="music-album sk-transparent sk-text-14-2857-640 sk-text">跨时代</text>
+            <view class="border-line"></view>
+          </view>
+        </view>
+        <view class="music-cell-view">
+          <view class="music-cell" data-music-id="61ec77d1328d186424af1c57">
+            <text class="music-title sk-transparent sk-text-14-2857-294 sk-text">简单爱</text>
+            <text class="music-album sk-transparent sk-text-14-2857-471 sk-text">范特西</text>
+            <view class="border-line"></view>
+          </view>
+        </view>
+        <view class="music-cell-view">
+          <view class="music-cell" data-music-id="61ec77d554971e406acfbf13">
+            <text class="music-title sk-transparent sk-text-14-2857-73 sk-text">对不起</text>
+            <text class="music-album sk-transparent sk-text-14-2857-40 sk-text">范特西</text>
+            <view class="border-line"></view>
+          </view>
+        </view>
+        <view class="music-cell-view">
+          <view class="music-cell" data-music-id="61ec77af328d186424af1c4c">
+            <text class="music-title sk-transparent sk-text-14-2857-874 sk-text">星晴</text>
+            <text class="music-album sk-transparent sk-text-14-2857-307 sk-text">Jay</text>
+            <view class="border-line"></view>
+          </view>
+        </view>
+        <view class="music-cell-view">
+          <view class="music-cell" data-music-id="61ec77b0328d186424af1c4d">
+            <text class="music-title sk-transparent sk-text-14-2857-223 sk-text">娘子</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</template>

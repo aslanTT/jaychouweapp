@@ -1,0 +1,69 @@
+<import src="../../../component/request-loading/loading.wxml"/>
+
+<template is="request-loading" wx:if="{{loading}}"/>
+<wxs src="./postcard.wxs" module="tools" />
+
+<view class="body" hidden="{{loading}}">
+  <view class="postcard-view">
+    <pannel id="canvas-pannel" style="width: 100%;" profile="{{profile}}" bindshareImagePath="shareImagePath"/>
+  </view>
+  <view class="eidt-container">
+    <view class="tite-view">
+      <view class="music-name" wx:if="{{currentTab == 0}}">{{name}}</view>
+      <scroll-view 
+      class="tag-scroll-view"
+      scroll-x="{{true}}"
+      enable-flex="{{true}}"
+      enhanced="{{true}}" 
+      fast-deceleration="{{true}}" 
+      scroll-anchoring="{{true}}"
+      wx:if="{{currentTab == 1}}">
+        <view class="tag-select-view" wx:for="{{bgPics}}" wx:key="index" bindtap="didSelectPicTab" data-index="{{index}}">
+          <text class="tag-text {{selectPicTab==index? 'subject-color':''}}">{{item.name}}</text>
+        </view>
+      </scroll-view>
+      <view class="text-edit-item" wx:if="{{currentTab == 2}}"></view>
+    </view>
+    <view class="edit-view">
+      <view class="lyric-select-view" wx:if="{{currentTab == 0}}">
+        <scroll-view 
+        class="lyric-scroll-view"
+        scroll-y="{{true}}"
+        enable-flex="{{true}}"
+        enhanced="{{true}}" 
+        fast-deceleration="{{true}}" 
+        scroll-anchoring="{{true}}">
+          <view class="item-select-view" wx:for="{{lyricValues}}" wx:key="index" bindtap="didSelectLyric" data-index="{{index}}">
+            <view class="checkbox-view {{tools.hasTxtExist(selectLyrics, index) ? 'subject-bg-color': ''}}"></view>
+            <text class="lyric-text">{{item}}</text>
+          </view>
+        </scroll-view>
+      </view>
+      <view class="pic-select-view" wx:if="{{currentTab == 1}}">
+        <scroll-view 
+        class="pic-scroll-view"
+        scroll-y="{{true}}"
+        enable-flex="{{true}}"
+        enhanced="{{true}}" 
+        fast-deceleration="{{true}}" 
+        scroll-anchoring="{{true}}">
+          <view class="pic-item-select-view" wx:for="{{bgPics[selectPicTab].picList}}" wx:key="index" bindtap="didSelectPic" data-pic="{{item.bigImg}}">
+            <image class="pic-item {{selectBg == item.bigImg ? 'border-select': ''}}" src="{{item.bigImg}}"/>
+          </view>
+        </scroll-view>
+      </view>
+      <view class="text-edit-view" wx:if="{{currentTab == 2}}">
+      </view>
+    </view>
+  </view>
+  <view class="tool-bar">
+    <view class="funtion-select-view">
+      <text class="iconfont citiao function-icon {{currentTab==0 ? 'subject-color':''}}" bindtap="didClickTab" data-tab="0"></text>
+      <text class="iconfont tupian-yuan function-icon {{currentTab==1 ? 'subject-color':''}}" bindtap="didClickTab" data-tab="1"></text>
+      <!-- <text class="iconfont wenzigongju function-icon {{currentTab==2 ? 'subject-color':''}}" bindtap="didClickTab" data-tab="2"></text> -->
+    </view>
+    <view class="complete-view subject-bg-color" bindtap="didClickSave">
+        <text decode="{{true}}">保&nbsp;存</text>
+    </view>
+  </view>
+</view>

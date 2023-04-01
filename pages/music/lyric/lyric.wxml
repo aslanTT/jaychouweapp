@@ -1,0 +1,33 @@
+<import src="../../../component/request-loading/loading.wxml"/>
+<template is="request-loading" wx:if="{{loading}}"/>
+
+<image src="{{cover}}" class="background_img" hidden="{{loading}}"></image>
+<view class="mask" hidden="{{loading}}"/>
+
+<view class="body">
+  <view class="weapp-title" style="top:{{isIpx?'120rpx':'70rpx'}};" bindtap="didClickBackButton">
+    <text class="iconfont fanhui back-icon" />
+  </view>
+
+  <view class="music-container" hidden="{{loading}}">
+    <view class="music-view">
+      <image src="{{cover}}" mode="aspectFill" class="cover-view"></image> 
+      <view class="music-info-view">
+        <text class="music-name">{{name}}</text>
+        <text class="album-name">{{album.name}}</text>
+      </view>
+    </view>
+    <text class="duration-view">{{currentTime}}/{{durationTime}}</text>
+    <scroll-view id="content-view" class="content-view" 
+    scroll-y="{{true}}"
+    enable-flex="{{true}}"
+    enhanced="{{true}}" 
+    fast-deceleration="{{true}}" 
+    scroll-anchoring="{{true}}"
+    scroll-top="{{scrollTop}}"
+    >
+      <text wx:for="{{lyricValues}}" wx:key="index" wx:item="item" wx:if="{{item.length>0}}" class="lyric-text {{currentIndex == index ? 'currentTime' : ''}}">
+      {{item}}</text>
+    </scroll-view>
+  </view>
+</view>

@@ -1,0 +1,11 @@
+<view class="container">
+  <view class="search-view">
+    <textarea class="search-text-input" placeholder-class="search-text-input-placeholder" placeholder='请粘贴公众号文章链接' bindinput='searchWordChange' confirm-type="done" value='{{url}}'></textarea>
+  </view>
+  <block wx:if="{{!adaptQQ}}">
+    <text class="paste-tip-title">小贴士</text>
+    <text class="paste-tip">复制公众号文章链接到此页面</text>
+    <image class="paste-image" src="/image/guide.png"></image>
+  </block>
+  <button class="confirm-button" hover-class='confirm-hover' bindtap='onConfirmSubmit'>推 荐</button>
+</view>

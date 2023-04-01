@@ -1,0 +1,12 @@
+@import "../list/essayCell.wxss";
+
+.essay-cell-view {
+  width: 100%;
+  margin-top: 0px;
+  margin-bottom: 20rpx;
+  background-color: white;
+}
+
+.container {
+  margin-top: 20rpx;
+}

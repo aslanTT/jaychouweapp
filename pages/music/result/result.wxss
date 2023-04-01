@@ -1,0 +1,11 @@
+@import "../songs/song-cell/cell.wxss";
+
+.essay-cell-view {
+  width: 100%;
+  margin-top: 0px;
+  margin-bottom: 10px;
+}
+
+.container {
+  margin-top: 20rpx;
+}

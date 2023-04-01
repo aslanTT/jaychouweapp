@@ -1,0 +1,29 @@
+
+var image = function(notice) {
+  var image = ''
+  if (notice.reply && notice.reply.imgs.length > 0) {
+    image = notice.reply.imgs[0]
+  } else if (notice.subject) {
+    if (notice.subject.video) {
+      image = notice.subject.video.cover
+    } else if (notice.subject.imgs.length > 0) {
+      image = notice.subject.imgs[0]
+    }
+  }
+  return image
+}
+
+var text = function(notice) {
+  var text = ''
+  if (notice.reply && notice.reply.content.length > 0) {
+    text = notice.reply.content
+  } else if (notice.subject && notice.subject.content.length > 0) {
+    text = notice.subject.content
+  }
+  return text
+}
+
+module.exports = {
+  text: text,
+  image: image
+};

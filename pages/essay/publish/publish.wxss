@@ -1,0 +1,91 @@
+
+page {
+  background-color: white;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: white;
+}
+
+.search-view {
+  margin-top: 50rpx;
+  height: 140rpx;
+  width: 80vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  border-radius: 70rpx;
+  background-color: #f0f0f0;
+}
+
+.search-text-input {
+  margin-left: 40rpx;
+  margin-right: 40rpx;
+  width: 90%;
+  height: 140rpx;
+  font-size: 30rpx;
+  color: #333333;
+  padding-top: 20rpx;
+}
+
+.search-text-input-placeholder {
+  font-size: 26rpx;
+  color: #cccccc;
+}
+
+.search-icon-size {
+  margin-left: 15px;
+  font-size: 20px;
+  color: #333;
+}
+
+.paste-tip-title {
+  font-size: 30rpx;
+  margin-top: 40rpx;
+  width: 100%;
+  text-align: center;
+  color: #333333;
+}
+
+.paste-tip {
+  font-size: 24rpx;
+  color: #aaa;
+  margin-top: 20rpx;
+}
+
+.confirm-button {
+  width: 360rpx;
+  height: 90rpx;
+  line-height: 90rpx;
+  border-radius: 45rpx;
+  color: white;
+  font-size: 32rpx;
+  background-color: #B64A48;
+  margin-top: 30rpx;
+}
+
+.confirm-hover {
+  background-color: #B64A48;
+  opacity: 0.6;
+}
+
+.contact-button {
+  color: #B64A48;
+  text-decoration: underline;
+  text-align: center;
+  font-size: 32rpx;
+  position: fixed;
+  bottom:30px;
+  width: 100%;
+}
+
+.official-account {
+  width: 100%;
+  position: fixed;
+  bottom: 0px;
+}

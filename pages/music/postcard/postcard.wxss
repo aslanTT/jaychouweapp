@@ -1,0 +1,173 @@
+.body {
+  position: fixed;
+  top:0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #010101;
+}
+
+.eidt-container {
+  position: fixed;
+  bottom: 140rpx;
+  width: 100%;
+  height: 540rpx;
+}
+
+.tite-view {
+  width: 100vw;
+  height: 80rpx;
+  border-bottom: 1rpx #a0a0a0 solid;
+  margin-bottom: 10rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.edit-view {
+  width: 100%;
+  height: 460rpx;
+}
+
+.tag-scroll-view {
+  width: 100vw;
+  height: 100%;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.tag-text {
+  font-size: 30rpx;
+  color: white;
+  margin-top: 30rpx;
+  text-align: center;
+}
+
+.tag-select-view {
+  width: 200rpx;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.music-name {
+  margin-left: 30rpx;
+  font-size: 28rpx;
+  color: white;
+}
+
+.pic-select-view {
+  width: 100%;
+  height: 100%;
+}
+
+.lyric-select-view, .lyric-scroll-view {
+  width: 100%;
+  height: 100%;
+}
+
+.item-select-view {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  height: 50rpx;
+  width: 100%;
+  margin-bottom: 20rpx;
+}
+
+.checkbox-view {
+  width: 26rpx;
+  height: 26rpx;
+  min-width: 26rpx;
+  min-height: 26rpx;
+  max-width: 26rpx;
+  max-height: 26rpx;
+  border-radius: 13rpx;
+  background-color:  #010101;
+  border: 4rpx solid #909090;
+  margin-left: 30rpx;
+}
+
+.lyric-text {
+  font-size: 30rpx;
+  color: white;
+  margin-left: 24rpx;
+}
+
+.pic-scroll-view {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap:wrap;
+}
+
+.pic-item-select-view {
+  margin-left: 20rpx;
+  margin-bottom: 20rpx;
+  margin-top: 10rpx;
+  width: 126rpx;
+  max-width: 126rpx;
+  min-width: 126rpx;
+  height: 126rpx;
+  max-height: 126rpx;
+  min-height: 126rpx;
+}
+
+.pic-item {
+  width: 100%;
+  height: 100%;
+}
+
+.border-select {
+  border: 4rpx #B64A48 solid;
+}
+
+.tool-bar {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height:140rpx;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  background-color: #000000;
+}
+
+.funtion-select-view {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 60rpx;
+  margin-top: 20rpx;
+}
+
+.function-icon {
+  color: white;
+  font-size: 50rpx;
+  margin-left: 100rpx;
+}
+
+.complete-view {
+  width: 180rpx;
+  height: 100rpx;
+  font-size: 36rpx;
+  text-align: center;
+  color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}

@@ -1,0 +1,80 @@
+/* CDN 服务仅供平台体验和调试使用，平台不承诺服务的稳定性，企业客户需下载字体包自行发布使用并做好备份。 */
+@font-face {
+  font-family: 'iconfont';  /* Project id 2669285 */
+  src: url('//at.alicdn.com/t/c/font_2669285_1ujoxhsyxht.ttf?t=1678500326084') format('truetype');
+}
+
+.iconfont {
+  font-family:"iconfont" !important;
+  font-size:100rpx;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.qunfengfabushangxian::before { content: "\e763"; }
+.tupian::before { content: "\e656"; }
+.shanchu::before { content: "\e6a6"; }
+.tubiaozhizuo::before { content: "\e60e"; }
+.ziyuan::before { content: "\e637"; }
+.ai-mark::before { content: "\e667"; }
+.fenxiang::before { content: "\e684"; }
+.previewright::before { content: "\e75c"; }
+.location::before { content: "\e788"; }
+.quanzi::before { content: "\e603"; }
+.avatar::before { content: "\e668"; }
+.gender::before { content: "\e63a"; }
+.avatarsetting::before { content: "\e61c"; }
+.username::before { content: "\e6aa"; }
+.auto-switch::before { content: "\e622"; }
+.play::before { content: "\e60b"; }
+.xiaoxi::before { content: "\e669"; }
+.paixushang::before { content: "\e613";}
+.paixuxia::before { content: "\e614";}
+.refresh::before { content: "\e64f";}
+.link::before { content: "\e8dd";}
+.shipin::before { content: "\e616"; }
+
+.bofangliebiao:before { content: "\e6a7"; }
+.fenxiang1::before { content: "\e640"; }
+
+.fanhui::before { content: "\e629";}
+.shijian::before { content: "\e63b";}
+.lujing::before { content: "\e621";}
+
+.play::before { content: "\e768";}
+.zanting::before { content: "\e600";}
+.shouting::before { content: "\e60f";}
+
+.zhuanfa::before { content: "\e61b";}
+.linkcircle::before { content: "\e67b";}
+
+.add-essay::before { content: "\e617";}
+
+.arrow-double-right::before { content: "\e665";}
+
+.tupian-yuan::before { content: "\e650";}
+.citiao::before { content: "\e7cc";}
+
+.yuyin::before { content: "\e618";}
+
+.icon_bangdan2::before { content: "\e624";}
+.zixun::before { content: "\e62a";}
+.huokehaibao::before { content: "\e699";}
+.paihang::before {content: "\e638";}
+.xiangce::before { content: "\e69b";}
+.zhuanjiguangpan::before { content: "\e64b";}
+.yinle1::before { content: "\e619";}
+.shoucang1::before { content: "\e906";}
+.shouye::before {content: "\e623";}
+.erji::before { content: "\e601";}
+.erji1::before { content: "\e627";}
+.dianpu::before { content: "\e602";}
+.baocundaozhuomian::before { content: "\e604";}
+.touxiang3::before { content: "\e632";}
+.weixingongzhonghao::before { content: "\e63c";}
+.dingyue::before { content: "\e625";}
+.guanggao::before { content: "\e630";}
+.liuyan::before { content: "\e744";}
+.dashang::before { content: "\e691";}
+.gongyijuankuan::before { content: "\e655";}

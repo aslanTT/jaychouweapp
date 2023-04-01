@@ -1,0 +1,6 @@
+var hasTxtExist = function(list, text) {
+  return list.indexOf(text) != -1;
+}
+module.exports = {
+  hasTxtExist: hasTxtExist
+};

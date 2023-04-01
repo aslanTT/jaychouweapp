@@ -1,0 +1,79 @@
+<import src="../../../component/request-loading/loading.wxml"/>
+<import src="./album-cell/cell.wxml"/>
+
+<add-to-my-miniprogram duration="{{6}}" wx:if="{{noticeShow}}">
+  <view slot="content">
+    添加到我的小程序 ×
+  </view>
+</add-to-my-miniprogram>
+
+<template is="request-loading" wx:if="{{loading}}"/>
+<navigation id='Navigation' show-icon="{{false}}" showSearch="{{true}}" backgroundColor="#B64A48" class="" bindtapSearch="headerSearch" placeholder="搜索歌曲" hidden="{{loading}}" ></navigation>
+
+<view class="menu-container-view" hidden="{{loading || restMode}}" wx:if="{{menus.length > 0}}" >
+  <scroll-view class="menu-scroll-view" 
+  scroll-x="{{true}}"
+  enable-flex="{{true}}"
+  >
+    <view class="menu-item" wx:for="{{menus}}" wx:key="item" bindtap="{{item.handler}}">
+      <view class="icon-container">
+        <block wx:if="{{index==0}}">
+          <block wx:if="{{isPlay}}">
+            <image class="icon-container play-animation" src="{{currentMusic.album.covers[0]}}" mode="aspectFill"></image>
+          </block>
+          <block wx:else>
+            <image class="menu-album-image" src="{{shareImg}}" wx:if="{{shareImg.length>0}}"></image>
+            <text class="iconfont {{item.icon}} subject-color" style="font-size: {{item.font}};" wx:else></text>
+          </block>
+        </block>
+        <block wx:else>
+          <text class="iconfont {{item.icon}} subject-color" style="font-size: {{item.font}};"></text>
+        </block>
+      </view>
+      <text class="menu-title">{{item.title}}</text>
+    </view>
+  </scroll-view>
+</view>
+
+<view class="container" hidden="{{loading || restMode}}">
+  <view class="no-content" style="margin-top:400rpx;" wx:if="{{albumList.length == 0}}">
+    <view class="no-content-font">暂无专辑</view>
+  </view>
+  <view class="content-view" style="margin-bottom: 90rpx;">
+    <view class="banner-view"  wx:if="{{bannerImg.length>0}}" bindtap="didClickTodayMusic">
+      <image class="banner-image" mode="aspectFill" src="{{bannerImg}}"/>
+      <view class="banner-image-mask" wx:if="{{todayMusic != null}}"/>
+      <view class="banner-image-des" wx:if="{{todayMusic != null}}">
+        <text class="banner-subtitle">今日金曲</text>
+        <text class="banner-title">- {{todayMusic.music.name}} -</text>
+      </view>
+    </view>
+    <block wx:for="{{albumList}}" wx:key="item">
+      <view class="music-cell-view">
+        <template is="album-cell" data="{{album:item}}"/>
+      </view>
+      <view class="border-line"/>
+    </block>
+  </view>
+</view>
+
+<view class="current-essay-view" hidden="{{!onPlay}}" bindtap="didClickCurrentMusic">
+  <view class="current-essay-left-view">
+    <image class="current-essay-cover {{isPlay ? 'play-animation' : ''}}" src="{{currentMusic.album.covers[0]}}" mode="aspectFill"></image>
+    <text class="current-essay-title">{{currentMusic.name}}</text>
+  </view>
+  <view class="current-essay-right-view">
+    <text class="iconfont zanting play-icon" id="play" wx:if="{{isPlay}}" bindtap="didClickPlay"/>
+    <text class="iconfont play play-icon" id="play" wx:else bindtap="didClickPlay"/>
+    <text class="play-time">{{currentTime}}/{{durationTime}}</text>
+  </view>
+</view>
+
+<view class="no-content" style="margin-top:100rpx;" wx:if="{{restMode}}">
+  <ad style="margin-bottom:50rpx;background-color: white;" unit-id="adunit-3b5f662f710d88f6"></ad>
+  <view class="no-content-font">今日服务资源已耗尽</view>
+  <view class="no-content-font">休息下，过了零点再来</view>
+  <view class="no-content-body">快疯狂点广告</view>
+  <view class="no-content-body">给开发小哥哥充钱买服务器！</view>
+  <ad style="margin-top:50rpx;background-color: white;" unit-id="adunit-41ec620d5e9caccc"></ad>
+</view>

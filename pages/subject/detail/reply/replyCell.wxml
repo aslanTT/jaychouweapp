@@ -1,0 +1,54 @@
+<template name="reply-cell">
+  <view class="reply-cell">
+    <view class="cell-user">
+      <view class="cell-profile" bindtap="didClickUser" data-user-id="{{reply.user.objectId}}">
+        <image class="from-user-avatar" src="{{reply.user.avatarUrl}}"></image>
+        <view class="cell-name-view">
+          <text class="from-user-name">{{reply.user.nickName}}</text>
+          <text class="from-user-time">{{reply.floor}}楼 ｜ {{reply.updatedTime}}</text>
+        </view>
+      </view>
+      <!-- <view class="cell-action">
+        <button class="cell-reply-button" bindtap="didClickReplyButton" data-paper="{{reply}}" wx:if="{{reply.user.userId != myselfId}}">回复</button>
+      </view> -->
+    </view>
+    <view class="cell-content-view">
+      <text class='cell-content'>{{reply.content}}</text>
+      <view class="image-view" wx:if="{{reply.imgs.length>0}}">
+        <image class="image-item" mode='widthFix' wx:for="{{reply.imgs}}" wx:key="item" src="{{item}}" bindtap="didClickPreviewReplyImage" data-index="{{index}}" data-reply-index="{{replyIndex}}" lazy-load="true" show-menu-by-longpress="true"/>
+      </view>
+      <view class="voice-view" wx:elif="{{reply.voice}}">
+        <view class="audio-view">
+          <view class='audio' style="width: 200rpx;" bindtap='audioPlay' data-url="{{reply.voice.url}}" data-type="reply" wx:if="{{!reply.voice.playing}}" data-index="{{replyIndex}}">
+            <image class='ico' src='/image/yuyin-ico.png'/>
+            <label class='time'>{{reply.voice.duration}}</label>
+          </view>
+          <view class='audio' bindtap='audioStop' data-url="{{reply.voice.url}}" data-type="reply" wx:if="{{reply.voice.playing}}" data-index="{{replyIndex}}">
+            <image class='ico' src='/image/yuyin-gif.gif' />
+            <label class='time'>{{reply.voice.duration}}</label>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="cell-quote" wx:if="{{reply.quote && reply.quote.floor}}">
+      <text class="quote-user">{{reply.quote.user.nickName}} 第{{reply.quote.floor}}楼</text>
+      <text class="quote-content">{{reply.quote.content}}</text>
+      <view class="quote-image-view" wx:if="{{reply.quote.imgs.length>0}}">
+        <image class="quote-image-item" wx:for="{{reply.quote.imgs}}" wx:key="item" src="{{item}}" bindtap="didClickPreviewQuoteImage" data-index="{{index}}" data-reply-index="{{replyIndex}}"/>
+      </view>
+      <view class="voice-view" wx:elif="{{reply.quote.voice}}">
+        <view class="audio-view">
+          <view class='audio' style="width: 200rpx;">
+            <image class='ico' src='/image/yuyin-ico.png' />
+            <label class='time'>{{reply.quote.voice.duration}}</label>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="comment-view" >
+      <text class="iconfont tubiaozhizuo comment-icon" bindtap="didClickReply" data-reply-index="{{replyIndex}}" wx:if="{{myselfId != reply.user.objectId}}" />
+      <text class="reply-report-button" bindtap="didClickReportButton">举报</text>
+    </view>
+    <view class="border-line"/>
+  </view>
+</template>

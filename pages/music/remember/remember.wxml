@@ -1,0 +1,23 @@
+<import src="../../../component/request-loading/loading.wxml"/>
+<template is="request-loading" wx:if="{{loading}}"/>
+
+<view class="container" wx:if="{{!loading}}">
+  <block wx:for="{{list}}" wx:key="item">
+      <view class="cell-view" bindtap="didClickCell" data-music-id="{{item.music.objectId}}">
+        <image class="user-avatar" src="{{item.avatar}}"/>
+        <view class="user-conmment-view">
+          <text class="user-name"> {{item.user}}</text>
+          <text class="comment-text">{{item.comment}}</text>
+          <text class="music-name"> >> {{item.music.name}}</text>
+        </view>
+      </view>
+    </block>
+    <view class="loading-tip" wx:if="{{list.length>0}}">
+      <block wx:if="{{hasMore}}">
+        加载中...
+      </block>
+      <block wx:else>
+        没有更多了
+      </block>
+    </view>
+</view>

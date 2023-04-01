@@ -1,0 +1,12 @@
+<template name="essay-cell">
+  <view class="essay-cell">
+    <view class="essay-cell-content-view" id='essay-cell' hover-class='hover-class' bindtap='didTapCell' data-essay="{{essay}}">
+      <image class="essay-image" src="{{essay.cover}}" mode="aspectFill"/>
+      <view class="essay-right-view">
+        <label class="essay-title">{{essay.title}}</label>
+        <label class="essay-desc" wx:if="{{essay.digest.length > 0}}">{{essay.digest}}</label>
+        <view class="relate-button" id="relate" wx:if="{{!essay.music && uid && uid == '61ece5c9328d186424af7e88'}}" bindtap="didClickRelateButton" data-essay-id="{{essay.objectId}}">关联</view>
+      </view>
+    </view>
+  </view>
+</template>

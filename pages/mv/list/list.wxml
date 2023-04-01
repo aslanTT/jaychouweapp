@@ -1,0 +1,33 @@
+<import src="../../../component/request-loading/loading.wxml"/>
+
+<template is="request-loading" wx:if="{{loading}}"/>
+
+<block wx:if="{{!restMode}}">
+  <block wx:if="{{!loading && list.length != 0 }}">
+    <navigation id='Navigation' title="MV"  backgroundColor="#B64A48" hidden="{{loading}}" showSearch="{{true}}" placeholder="搜索你想要的MV" class="" bindtapSearch="headerSearch"></navigation>
+    <scroll-view bindscrolltolower="refreshFeatured" scroll-y="true" style="height:{{height}}px;" hidden="{{loading}}">
+      <video-list bindtoDetail="toVideoDetail" videoList="{{list}}"></video-list>
+      <view class="loading-tip" wx:if="{{list.length>0}}">
+        <block wx:if="{{hasMore}}">
+          加载中...
+        </block>
+        <block wx:else>
+          没有更多了
+        </block>
+      </view>
+    </scroll-view>
+  </block>
+  <block wx:else>
+    <navigation id='Navigation' title="MV" showTitle="{{true}}"  showSearch="{{false}}" backgroundColor="#B64A48" class="" bindtapSearch="headerSearch"></navigation>
+    <view class="loading-tip">暂无数据</view>
+  </block>
+</block>
+
+<view class="no-content" style="margin-top:100rpx;" wx:if="{{restMode}}">
+  <ad style="margin-bottom:50rpx;background-color: white;" unit-id="adunit-df33b520b99e0150"></ad>
+  <view class="no-content-font">今日服务资源已耗尽</view>
+  <view class="no-content-font">休息下，过了零点再来</view>
+  <view class="no-content-body">快疯狂点广告</view>
+  <view class="no-content-body">给开发小哥哥充钱买服务器！</view>
+  <ad style="margin-top:50rpx;background-color: white;" unit-id="adunit-b602194b47ce72ac"></ad>
+</view>

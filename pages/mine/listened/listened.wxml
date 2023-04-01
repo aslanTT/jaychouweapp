@@ -1,0 +1,26 @@
+
+<import src="listened.skeleton.wxml"/>
+<template is="skeleton" wx-if="{{loading}}" />
+
+<view class="no-content" style="margin-top:400rpx;" wx:if="{{musicList.length == 0 && !loading}}" wx-if="{{!loading}}">
+  <view class="no-content-font">暂无听过歌曲</view>
+</view>
+
+<view class="essay-log-cell-view" wx:for="{{musicList}}" wx:key="item" wx-if="{{!loading}}">
+  <view class="essay-log-cell" bindtap="didTapMusic" data-music="{{item.music}}" data-index="{{index}}">
+    <view class="essay-left-view">
+      <text class="essay-log-title">{{item.music.name}}</text>
+      <text class="essay-log-author">听了{{item.times}}次</text>
+    </view>
+    <image class="essay-log-cover" mode="aspectFill" src="{{item.music.album.covers[0]}}"></image>
+  </view>
+</view>
+
+<view class="loading-tip" wx:if="{{musicList.length>0 && !loading}}">
+  <block wx:if="{{hasMore}}">
+    加载中...
+  </block>
+  <block wx:else>
+    没有更多了
+  </block>
+</view>

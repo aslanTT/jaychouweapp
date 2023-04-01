@@ -1,0 +1,32 @@
+<import src="../cell/cell.wxml"/>
+<import src="../../../component/request-loading/loading.wxml"/>
+
+<template is="request-loading" wx:if="{{loading}}"/>
+
+<image class="back-button" style="{{isIpx?'top: 110rpx;':'top: 60rpx;'}}" src="/image/back.png" bindtap="didClickBackButton"></image>
+
+<view class="container" wx:if="{{!loading}}">
+  <view class="header">
+    <image class="bg-header" src="/image/alone.jpeg"></image>
+    <image class="user-avatar" src="{{user.avatarUrl}}"></image>
+    <text class="user-name">{{user.nickName}}</text>
+  </view>
+  <block wx:if="{{list.length == 0}}">
+    <view class="no-content" style="margin-top:400rpx;">
+      <view class="no-content-font">暂无帖子</view>
+    </view>
+  </block>
+  <block wx:else>
+    <view class="cell-view" style="{{user.sign.length>0?'margin-top:30rpx;':'margin-top:60rpx;'}}">
+      <template is="subject-cell" data="{{subject:item, index:index, needShowCircle:true}}" wx:for="{{list}}" wx:key="item"/>
+    </view>
+    <view class="loading-tip">
+      <block wx:if="{{hasMore}}">
+        加载中...
+      </block>
+      <block wx:else>
+        没有更多了
+      </block>
+    </view>
+  </block>
+</view>

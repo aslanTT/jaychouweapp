@@ -1,0 +1,9 @@
+page {
+  background-color: white;
+}
+
+.container {
+  background-color: white;
+  max-width: 100%;
+  min-width: 100%;
+}

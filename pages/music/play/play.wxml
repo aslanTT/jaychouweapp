@@ -1,0 +1,153 @@
+<import src="../../../component/request-loading/loading.wxml"/>
+<import src="../../essay/list/essayCell.wxml"/>
+
+<template is="request-loading" wx:if="{{loading}}"/>
+
+<view class="play-disable-view" wx:if="{{!playEnable}}">
+   <view class="weapp-title" style="margin-top:{{isIpx?'110rpx':'70rpx'}};" bindtap="didClickBackButton">
+    <text class="iconfont fanhui back-icon" style="color:black;" />
+  </view>
+  <view class="play-disable-tip">小程序上不支持播放</view>
+</view>
+
+<image src="{{currentMusic.album.covers[0]}}" class="background_img" hidden="{{loading ||!playEnable}}"></image>
+<view class="mask" hidden="{{loading || !playEnable}}"/>
+
+<view class="body" hidden="{{loading || !playEnable}}">
+  <view class="weapp-title" style="top:{{isIpx?'110rpx':'70rpx'}};">
+    <image src="{{currentMusic.album.covers[0]}}" class="background-navi-title"></image>
+    <text class="iconfont fanhui back-icon" id='back' bindtap="didClickBackButton"/>
+    <view class="avatar-list">
+      <image class="avatar-img" src="{{item}}" wx:for="{{listenAvatars}}" wx:key="item"></image>
+    </view>
+    <view class="avatar-count" bindtap="didClickUserListenList">
+      <text>{{listenCount}}个粉丝在听</text>
+    </view>
+  </view>
+  <view class="essay-brief" style="margin-top:{{isIpx?'210rpx':'170rpx'}};">
+    <text class="essay-name">{{currentMusic.name}}</text>
+    <text class="music-album" bindtap="didClickMusicAlbumLink">{{currentMusic.album.name}}</text>
+  </view>
+
+  <view class="essay-cover-show">
+    <image src="{{currentMusic.album.covers[0]}}" class="coverImg {{isPlay ? 'circleplay' : ''}}" mode="aspectFill"/>
+  </view>
+
+  <view class="slider-view">
+    <text class="audio-current-time">{{currentTime}}</text>
+    <slider class="audio-slider" min="0" max="{{duration}}" backgroundColor="#FFFFFF" activeColor="#B64A48" block-color="#B64A48" block-size="12" value="{{sliderValue}}" bindchange="onSliderChange" bindtouchstart="onSliderStartDrag"></slider>
+    <text class="audio-end-time">{{durationTime}}</text>
+  </view>
+
+  <text class="song-lyric" bindtap="didClickMusicLyric">{{currentLyric}}</text>
+
+  <!-- 暂停播放图标 -->
+  <view class="play_suspend_view" wx:if="{{!simplifyMode}}">
+    <view class="collect-view">
+      <text class="iconfont lujing {{isCollect?'collect':'cancel-collect'}}" bindtap="didClickCollect"/>
+      <text class="collect-count">{{collectCount}}</text>
+    </view>
+    <image src="/image/lastSong.png" class="icon_last_play" bindtap="didClickPreMusic"/>
+    <text class="img_play_suspend iconfont zanting" hidden="{{!isPlay}}" bindtap="handleToggleBGAudio"/>
+    <text class="img_play_suspend iconfont play" hidden="{{isPlay}}" bindtap="handleToggleBGAudio"/>
+    <image src="/image/nextSong.png" class="icon_next_play" bindtap="didClickNextMusic" />
+    <text class="iconfont bofangliebiao list-icon" bindtap="didClickPlaylist"/>
+  </view>
+
+  <view class="tools-view" wx:if="{{!simplifyMode}}">
+    <view class="share-button-view" style="margin-left: 60rpx;">
+      <view class="share-button-container">分享给好友</view>
+      <button class="share-button" open-type="share" hover-class='hover-class' />
+    </view>
+    <view class="share-button-view" style="margin-right: 60rpx;" bindtap="didClickPostCard">
+      <view class="share-button-container">制作歌词海报</view>
+    </view>
+  </view>
+
+  <view class="recommend-area" wx:if="{{essayList.length>0}}">
+    <text class="recommend-title">相关资讯</text>
+    <view class="recommend-cell" wx:for="{{essayList}}" wx:key="item">
+      <template is="essay-cell" data="{{essay:item}}"/>
+    </view>
+  </view>
+
+  <view class="recommend-area" wx:if="{{recommendList.length>0}}">
+    <text class="recommend-title">您还可以听</text>
+    <view class="recommend-cell" wx:for="{{recommendList}}" wx:key="item" bindtap="didTapRecommendMusic" data-music="{{item}}">
+      <image class="album-cover" src="{{item.album.covers[0]}}" mode="aspectFill"></image>
+      <view class="essay-brief-view">
+        <text class="music-title">{{item.name}}</text>
+        <text class="essay-author">{{item.durationShow}}</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="comment-list-area" style="{{isIpx?'margin-bottom:100rpx;':'margin-bottom:30rpx;'}}" wx:if="{{!simplifyMode}}">
+    <view class="share-button-view">
+      <button class="share-button-container" bindtap="didClickComment">编写留言</button>
+    </view>
+
+    <view class="comment-view" hidden="{{commentList.length==0}}">
+      <block wx:key="item" wx:for="{{commentList}}">
+        <view class="comment-item" bindtap="didClickReply" data-index="{{index}}">
+          <view class="comment-user">
+            <image src="{{item.avatar}}" class="gravatarImg"></image>
+            <view class="comment-user-text">
+              <view class="comment-user-name" style='font-weight:bold;'>{{item.user}}{{item.userId==myselfId?'(我)':''}}</view>
+              <view class="comment-date">{{item.time}}</view>
+            </view>
+          </view>
+          <view class="comment-summary">{{item.comment}}</view>
+          <view class="comment-quote-view" wx:if="{{item.quote && item.quote.length>0}}">
+            <view class="comment-quote-line"/>
+            <view class="comment-quote">
+              <view class="comment-quote-text">{{item.touser.nickName}}{{item.touser.objectId==myselfId?'(我)':''}}</view>
+              <view class="comment-quote-text">{{item.quote}}</view>
+            </view>
+          </view>
+        </view>
+      </block>
+      <view class="loading-tip">
+        <block wx:if="{{hasMore}}">
+          加载中...
+        </block>
+        <block wx:else>
+          没有更多了
+        </block>
+      </view>
+    </view>
+  </view>
+
+</view>
+
+<view class="play-list-view" style="height:900rpx;" hidden="{{!showPlayList}}">
+  <view class="play-list-header">
+    <view class="play-mode-view" bindtap="didClickSwitchMode">
+      <image src="{{playMode.icon}}" class="play-mode-icon"></image>
+      <text class="play-mode-text subject-color">{{playMode.title}}</text>
+    </view>
+    <text class="play-close" bindtap="didClickClosePlaylist">收起</text>
+  </view>
+  <scroll-view scroll-y enhanced paging-enabled style="height:800rpx;" bindscrolltolower="onPullListenListBottom">
+    <view class="essay-log-cell-view" wx:for="{{musicList}}" wx:key="item">
+      <view class="essay-log-cell" bindtap="didTapMusic" data-music="{{item.music}}" data-index="{{index}}">
+        <view class="essay-left-view">
+          <text class="essay-log-title {{currentIndex == index ? 'currentSong' : ''}}">{{item.music.name}}</text>
+          <text class="essay-log-author">听了{{item.times}}次</text>
+        </view>
+        <image class="essay-log-cover" mode="aspectFill" src="{{item.music.album.covers[0]}}"></image>
+      </view>
+    </view>
+  </scroll-view>
+</view>
+
+<view class="comment-input-view" wx:if="{{commentShow}}" catchtap="preventTap" catchtouchmove="preventTap">
+  <view class="comment-input-area-view" catchtap="preventInputAreaTap" catchtouchmove="preventInputAreaTap">
+    <text class="reply-user-text" wx:if="{{replyUser.length > 0}}">回复{{replyUser}}：</text>
+    <textarea class="comment-input-textarea" placeholder="{{placeholder}}"  placeholder-class="placeholder" maxlength="1000" bindinput="bindKeyInput" name="inputComment" value="{{content}}" fixed="{{true}}" auto-focus confirm-type="done"/>
+    <view class="border-line"/>
+    <view class="comment-imags-select-view">
+      <button class="send-button" bindtap="onConfirmSubmit">提交</button>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,7 @@
+<view class="card-view" catchtouchmove='preventMove'>
+  <view class="card-container">
+    <view class="painter-container">
+      <painter use2D="{{true}}" palette="{{template}}" bind:imgOK="onImgOK" />
+    </view>
+  </view>
+</view>

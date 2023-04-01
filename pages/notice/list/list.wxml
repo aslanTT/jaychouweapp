@@ -1,0 +1,27 @@
+<import src="../cell/cell.wxml"/>
+<import src="../../../component/request-loading/loading.wxml"/>
+
+<template is="request-loading" wx:if="{{loading}}"/>
+
+<view class="container" wx:if="{{!loading}}">
+  <block wx:if="{{list.length == 0}}">
+    <view class="no-content" style="margin-top:400rpx;">
+      <view class="no-content-font">暂无新消息</view>
+    </view>
+  </block>
+  <block wx:else>
+    <view class="cell-view">
+      <block wx:for="{{list}}" wx:key="item">
+        <template is="notice-cell" data="{{notice:item, index:index}}"/>
+      </block>
+    </view>
+    <view class="loading-tip">
+      <block wx:if="{{hasMore}}">
+        加载中...
+      </block>
+      <block wx:else>
+        没有更多了
+      </block>
+    </view>
+  </block>
+</view>

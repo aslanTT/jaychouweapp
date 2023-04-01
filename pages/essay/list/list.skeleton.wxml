@@ -1,0 +1,92 @@
+<!--
+此文件为开发者工具生成，生成时间: 1/30/2022, 8:27:41 PM
+使用方法：
+在 /Users/aslan/Code/jaychou/weapp/pages/essay/list/list.wxml 引入模板
+
+```
+<import src="list.skeleton.wxml"/>
+<template is="skeleton" wx-if="{{loading}}" />
+```
+
+在 /Users/aslan/Code/jaychou/weapp/pages/essay/list/list.wxss 中引入样式
+```
+@import "./list.skeleton.wxss";
+```
+
+更多详细信息可以参考文档：https://developers.weixin.qq.com/miniprogram/dev/devtools/skeleton.html
+-->
+<template name="skeleton">
+  <view class="sk-container">
+    <view style="height:44px;padding-top:44px;">
+      <view class="navigation-bar" style="height:44px;padding-top:44px;">
+        <view class="search-box" style="top:12px;padding-top:44px;">
+          <text class="iconfont search search-icon"></text>
+        </view>
+      </view>
+    </view>
+    <view class="container">
+      <view class="content-view">
+        <view class="essay-cell-view">
+          <view class="essay-cell">
+            <view class="essay-cell-content-view" data-essay="[object Object]" hover-class="hover-class" id="essay-cell">
+              <view class="essay-left-view">
+                <label class="essay-title sk-transparent sk-text-13-6364-513 sk-text">周杰伦昆凌在线撒狗粮丨周杰伦晒街拍照</label>
+              </view>
+              <image class="essay-image sk-image" mode="aspectFill" style="border: none;"></image>
+            </view>
+          </view>
+        </view>
+        <view class="essay-cell-view">
+          <view class="essay-cell">
+            <view class="essay-cell-content-view" data-essay="[object Object]" hover-class="hover-class" id="essay-cell">
+              <view class="essay-left-view">
+                <label class="essay-title sk-transparent sk-text-13-6364-316 sk-text">周杰伦昆凌晒自拍撒狗粮，真是太甜了！</label>
+              </view>
+              <image class="essay-image sk-image" mode="aspectFill" style="border: none;"></image>
+            </view>
+          </view>
+        </view>
+        <view class="essay-cell-view">
+          <view class="essay-cell">
+            <view class="essay-cell-content-view" data-essay="[object Object]" hover-class="hover-class" id="essay-cell">
+              <view class="essay-left-view">
+                <label class="essay-title sk-transparent sk-text-13-6364-559 sk-text">狗粮来了！周杰伦：你是我的圣诞老婆我是你的圣诞树</label>
+              </view>
+              <image class="essay-image sk-image" mode="aspectFill" style="border: none;"></image>
+            </view>
+          </view>
+        </view>
+        <view class="essay-cell-view">
+          <view class="essay-cell">
+            <view class="essay-cell-content-view" data-essay="[object Object]" hover-class="hover-class" id="essay-cell">
+              <view class="essay-left-view">
+                <label class="essay-title sk-transparent sk-text-13-6364-743 sk-text">周杰伦:祝大家圣诞快乐丨周杰伦昆凌现身广州</label>
+              </view>
+              <image class="essay-image sk-image" mode="aspectFill" style="border: none;"></image>
+            </view>
+          </view>
+        </view>
+        <view class="essay-cell-view">
+          <view class="essay-cell">
+            <view class="essay-cell-content-view" data-essay="[object Object]" hover-class="hover-class" id="essay-cell">
+              <view class="essay-left-view">
+                <label class="essay-title sk-transparent sk-text-13-6364-533 sk-text">周杰伦创作这首歌是因为被朋友背叛，这首歌虽不热门，但绝不是冷门。</label>
+              </view>
+              <image class="essay-image sk-image" mode="aspectFill" style="border: none;"></image>
+            </view>
+          </view>
+        </view>
+        <view class="essay-cell-view">
+          <view class="essay-cell">
+            <view class="essay-cell-content-view" data-essay="[object Object]" hover-class="hover-class" id="essay-cell">
+              <view class="essay-left-view">
+                <label class="essay-title sk-transparent sk-text-13-6364-268 sk-text">2014年的今天，周杰伦发行专辑《哎呦，不错哦》</label>
+              </view>
+              <image class="essay-image sk-image" mode="aspectFill" style="border: none;"></image>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</template>

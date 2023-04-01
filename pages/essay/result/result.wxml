@@ -1,0 +1,24 @@
+<import src="../list/essayCell.wxml" />
+
+<navigation id='Navigation' show-icon="{{true}}"  title="{{keyword}}" show-title="{{true}}" class=""></navigation>
+
+<view class="container" hidden="{{loading}}">
+  <block wx:if="{{resultList.length == 0}}">
+    <view class="no-content">
+      <view class="no-content-font">暂无"{{keyword}}"相关文章，换个关键词试试</view>
+    </view>
+  </block>
+  <block wx:else>
+    <view class="essay-cell-view" wx:for="{{resultList}}" wx:key="item">
+      <template is="essay-cell" data="{{essay:item}}"/>
+    </view>
+    <view class="loading-tip">
+      <block wx:if="{{hasMore}}">
+        加载中...
+      </block>
+      <block wx:else>
+        没有更多了
+      </block>
+    </view>
+  </block>
+</view>

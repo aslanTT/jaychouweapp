@@ -1,0 +1,29 @@
+<wxs src="../utils/utils.wxs" module="util" />
+<view class="videoList">
+    <view wx:for="{{videoList}}"  wx:key="index" class="videoList-item" bindtap="goDetail" data-list="{{item}}">
+      <block wx:if="{{item.desc.length > 0}}">
+        <view class="conver-show">
+          <image class="cover" mode="aspectFill" src="{{item.cover}}"></image>
+          <text class="time">{{util.formatInterval(item.duration)}}</text>
+        </view>
+        <view class="desc-view">
+          <view class="txt">
+            <text class="title">{{item.title}}</text>
+            <text class="desc">{{item.desc}}</text>
+          </view>
+        </view>
+      </block>
+      <block wx:else>
+        <view class="recommend-item">
+          <image class="cell-cover" src="{{item.cover}}"></image>
+          <view class="cell-text">
+            <text class="text-title">{{item.title}}</text>
+            <text class="text-tag">{{util.formatInterval(item.duration)}}</text>
+          </view>
+        </view>
+      </block>
+      <block wx:if="{{index % 5 == 0}}">
+        <ad style="margin-top:20rpx;" unit-id="adunit-38500953e20d87ec"></ad>   
+      </block> 
+    </view>
+</view>

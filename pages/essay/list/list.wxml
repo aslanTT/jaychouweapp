@@ -1,0 +1,42 @@
+<import src="essayCell.wxml"/>
+
+<import src="list.skeleton.wxml"/>
+<template is="skeleton" wx-if="{{loading}}"/>
+
+<block wx:if="{{!restMode}}">
+  <navigation id='Navigation' show-icon="{{false}}" showSearch="{{true}}" placeholder="搜索你感兴趣的内容" class="" bindtapSearch="headerSearch" backgroundColor="#B64A48"></navigation>
+
+  <view class="container" hidden="{{loading}}">
+    <view class="content-view">
+      <block wx:for="{{essayList}}" wx:key="item">
+        <view class="essay-cell-view">
+          <template is="essay-cell" data="{{essay:item, uid: myselfId}}"/>
+          <block wx:if="{{index == 5}}">
+            <ad unit-id="{{banner['essay-five']}}" class="ad-banner" ad-intervals="{{30}}"></ad>
+          </block>
+        </view>
+      </block>
+      <view class="loading-tip" wx:if="{{essayList.length>0}}">
+        <block wx:if="{{hasMore}}">
+          加载中...
+        </block>
+        <block wx:else>
+          没有更多了
+        </block>
+      </view>
+    </view>
+  </view>
+
+  <view class="tool-bar" hover-class='tool-bar-hover' bindtap="didClickAddEssay">
+    <text class="iconfont add-essay subject-color load-button-size"></text>
+  </view>
+</block>
+
+<view class="no-content" style="margin-top:100rpx;" wx:if="{{restMode}}">
+  <ad style="margin-bottom:50rpx;background-color: white;" unit-id="adunit-2ab27da8b99eef6b"></ad>
+  <view class="no-content-font">今日服务资源已耗尽</view>
+  <view class="no-content-font">休息下，过了零点再来</view>
+  <view class="no-content-body">快疯狂点广告</view>
+  <view class="no-content-body">给开发小哥哥充钱买服务器！</view>
+  <ad style="margin-top:50rpx;background-color: white;" unit-id="adunit-8f15e60be2d438e9"></ad>
+</view>

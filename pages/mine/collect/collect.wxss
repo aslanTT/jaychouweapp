@@ -1,0 +1,16 @@
+@import "../../music/songs/song-cell/cell.wxss";
+@import "collect.skeleton.wxss";
+
+.content-view {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  min-width: 100%;
+}
+
+.music-cell-view {
+  display: flex;
+  min-width: 100%;
+}

@@ -1,0 +1,30 @@
+<template name="music-cell">
+  <view class="music-cell" bindtap="didTapMusicCell" data-music-id="{{music.objectId}}">
+    <view class="music-content-cell">
+      <view class="cell-left-view">
+        <text class="music-title">{{music.name}}</text>
+        <text class="music-album">{{music.album}}</text>
+      </view>
+      <block wx:if="{{cellSelectMode==1}}">
+        <view class="cell-right-view">
+          <view class="select-button">
+            <text class="select-button-title">选用</text>
+          </view>
+        </view>
+      </block>
+      <block wx:else>
+        <view class="cell-right-view" wx:if="{{strategy != 0}}">
+          <block wx:if="{{strategy==1}}">
+            <text class="music-num">{{music.collected}}</text>
+            <text class="iconfont lujing music-num-desc" />
+          </block>
+          <block wx:elif="{{strategy==2}}">
+            <text class="music-num">{{music.listened}}</text>
+            <text class="iconfont erji music-num-desc" />
+          </block>
+        </view>
+      </block>
+    </view>
+    <view class="border-line"/>
+  </view>
+</template>

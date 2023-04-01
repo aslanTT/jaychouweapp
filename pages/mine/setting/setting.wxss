@@ -1,0 +1,84 @@
+.save-button {
+  width: 90%;
+  height: 80rpx;
+  line-height: 80rpx;
+  border-radius: 8rpx;
+  margin-top: 50rpx;
+  font-size: 30rpx;
+  background-color: #B64A48;
+  color: #FFFFFF;
+}
+
+.edit-view {
+  border-top: 1rpx solid #eee;
+  width: 100%;
+  height: 200rpx;
+  background-color: white;
+}
+
+.edit-sign-textarea {
+  padding: 20rpx 0rpx;
+  height: 100%;
+  width: 92%;
+  margin-left: 4%;
+  line-height: 40rpx;
+  font-size: 30rpx;
+  color: #383838;
+}
+
+.edit-container {
+  background: #fff;
+  width: 100%;
+}
+
+.setting-icon {
+  font-size: 38rpx;
+  color: #B64A48;
+  margin-right: 24rpx;
+}
+
+.a-item {
+  padding: 36rpx;
+  border-top: 1rpx solid #eee;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.item-title {
+  font-size: 32rpx;
+  color: #999999;
+}
+
+.a-right-item {
+  margin-right: 20rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.placeholder {
+  font-size: 32rpx;
+  color: #999999;
+}
+
+.a-input {
+  font-size: 32rpx;
+  width: 100%;
+  text-align: right;
+}
+
+.switch-icon {
+  font-size: 40rpx;
+  color: #B64A48;
+  margin-left: 20rpx;
+}
+
+.avatar-publish {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50rpx;
+  border: 1rpx solid #eee;
+  margin-left: 20rpx;
+}

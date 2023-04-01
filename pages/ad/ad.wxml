@@ -1,0 +1,8 @@
+<view class="container">
+  <text class="ad-title" decode="true">{{desc}}</text>
+  <view class="ad-view" wx:for="{{adList}}" wx:key="item">
+    <block wx:if="{{item.type != 'pop'}}">
+      <ad unit-id="{{item['ad-id']}}" ad-type="{{item.type}}"></ad>
+    </block>
+  </view>
+</view>

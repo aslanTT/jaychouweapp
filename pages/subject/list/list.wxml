@@ -1,0 +1,79 @@
+<import src="../cell/cell.wxml"/>
+<import src="../../../component/request-loading/loading.wxml"/>
+
+<template is="request-loading" wx:if="{{loading}}"/>
+
+
+<block wx:if="{{!restMode}}">
+  <view class="navigation-bar" style="height:{{topBarHeight}}px;">
+    <view class="header-title-view" style="margin-top:{{menuTop}}px;" wx:if="{{menuTop>0}}">
+      <text class="header-title" bindtap="didClickHeadTitle">{{title}}</text>
+    </view>
+    <view class="notice-icon-view" style="margin-right:{{menuLeft}}px;margin-top:{{menuTop}}px;" bindtap="didClickNotice" wx:if="{{menuTop>0}}">
+      <text class="iconfont xiaoxi notice-icon"></text>
+      <view class="notice-count-icon" wx:if="{{noticeCount > 0}}">{{noticeCount}}</view>
+    </view>
+  </view>
+  <view class="header" style="top: {{topBarHeight}}px;">
+    <view class="filter-view">
+      <text class="filter-item {{select==index?'filter-item-active':''}}" bindtap="didClickFilter" data-index="{{index}}" wx:for="{{filters}}" wx:key="item" wx:index="index">{{item}}</text>
+    </view>
+    <text class="iconfont qunfengfabushangxian publish-icon" bindtap="didClickPublish"/>
+  </view>
+
+  <view class="container" style="top:{{topBarHeight+50}}px;height:{{containerHeight}}px;" wx:if="{{!loading}}">
+    <block wx:if="{{list.length == 0}}">
+      <view class="no-content" style="margin-top:400rpx;">
+        <view class="no-content-font">暂无帖子</view>
+      </view>
+    </block>
+    <block wx:else>
+      <scroll-view class="cell-view" 
+      scroll-y="true"
+      enable-flex="true"
+      enable-back-to-top="true"
+      refresher-enabled="true"
+      refresher-threshold="100"
+      refresher-default-style="black"
+      refresher-triggered="{{triggered}}"
+      bindrefresherrefresh="onPullDownRefresh"
+      bindscrolltolower="onReachBottom"
+      style="height:{{containerHeight}}px;">
+        <block wx:for="{{list}}" wx:key="item">
+          <template is="subject-cell" data="{{subject:item, index:index, needShowKPI:true}}"/>
+          <block wx:if="{{index==5}}">
+            <view class="activity-view" wx:if="{{activity.picUrl}}" bindtap="didClickActivity">
+              <image class="activity-image" mode="aspectFill" src="{{activity.picUrl}}"></image>
+              <view class="activity-desc">
+                <text class='activity-desc-text'>{{activity.title}}</text>
+              </view>
+              <view class="link-view">
+                <text class="iconfont link link-icon"/>
+              </view>
+            </view> 
+          </block>
+          <block wx:elif="{{index > 5 && index%10==0}}">
+            <ad unit-id="{{banner['feed-index-five']}}" ad-intervals="{{30}}"></ad>
+          </block>
+        </block>
+        <view class="loading-tip">
+          <block wx:if="{{hasMore}}">
+            加载中...
+          </block>
+          <block wx:else>
+            没有更多了
+          </block>
+        </view>
+      </scroll-view>
+    </block>
+  </view>
+</block>
+
+<view class="no-content" style="margin-top:100rpx;" wx:if="{{restMode}}">
+  <ad style="margin-bottom:50rpx;background-color: white;" unit-id="adunit-436ffa47eb075292"></ad>
+  <view class="no-content-font">今日服务资源已耗尽</view>
+  <view class="no-content-font">休息下，过了零点再来</view>
+  <view class="no-content-body">快疯狂点广告</view>
+  <view class="no-content-body">给开发小哥哥充钱买服务器！</view>
+  <ad style="margin-top:50rpx;background-color: white;" unit-id="adunit-eaf26a97e5df5dda"></ad>
+</view>

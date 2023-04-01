@@ -1,0 +1,138 @@
+<import src="./reply/replyCell.wxml"/>
+<import src="../../../component/request-loading/loading.wxml"/>
+
+<template is="request-loading" wx:if="{{loading}}"/>
+
+<view class="container" wx:if="{{!loading}}">
+  <view class="top-content-view">
+    <text class="detail-title" user-select="true" wx:if="{{subject.title.length > 0}}">{{subject.title}}</text>
+    <view class="detail-owner-view" bindtap="didClickUser" data-user-id="{{subject.owner.objectId}}">
+      <image class="owner-avater-view" src="{{subject.owner.avatarUrl}}"></image>
+      <view class="owner-nickname-view">
+        <text class="owner-nickname-text">{{subject.owner.nickName}}</text>
+        <text class="owner-publish-time">{{subject.createdTime}}</text>
+      </view>
+    </view>
+    <view class="detail-content {{(subject.imgs.length==0 && !subject.video)?'adapt-content-view':''}}">
+      <text user-select="true">{{subject.content}}</text>
+    </view>
+    <view class="image-view" wx:if="{{subject.imgs.length>0}}">
+      <image class="detail-image-item" mode='widthFix' wx:for="{{subject.imgs}}" wx:key="item" src="{{item}}" bindtap="didClickPreviewImage" data-index="{{index}}" lazy-load="true" show-menu-by-longpress="true"/>
+    </view>
+    <view class="video-view" wx:elif="{{subject.video}}">
+      <video src="{{subject.video.url}}" poster="{{subject.video.cover}}" duration="{{subject.video.duration}}" />
+    </view>
+    <view class="voice-view" wx:elif="{{subject.voice}}">
+      <view class="audio-view">
+        <!-- 默认状态 未播放 -->
+        <view class='audio' bindtap='audioPlay' data-url="{{subject.voice.url}}" data-type="subject" wx:if="{{!currentPlay.subjectPlaying}}">
+          <image class='ico' src='/image/yuyin-ico.png' />
+          <label class='time'>{{subject.voice.duration}}</label>
+        </view>
+
+        <!-- 当前正在播放状态 -->
+        <view class='audio' bindtap='audioStop' data-url="{{subject.voice.url}}" data-type="subject" wx:if="{{currentPlay.subjectPlaying}}">
+          <image class='ico' src='/image/yuyin-gif.gif' />
+          <label class='time'>{{subject.voice.duration}}</label>
+        </view>
+      </view>
+    </view>
+    <view class="report-view">
+      <text class="report-button" bindtap="didClickReportButton">举报</text>
+    </view>
+    <view class="border-line" style="margin-top:30rpx;"/>
+    <ad unit-id="{{banner['detail-bottom']}}" ad-intervals="{{30}}"></ad>
+  </view>
+  <view class="reply-view" wx:if="{{replyList.length > 0}}">
+    <view class="reply-header-view">
+      <title class="reply-header-title-view">全部回复</title>
+      <view class="sort-view" bindtap="didClickSort">
+        <text class="iconfont paixushang sort-icon"></text>
+        <block wx:if="{{sort==1}}">
+          <text class="sort-title">最早回复</text>
+        </block>
+        <block wx:else>
+          <text class="sort-title">最晚回复</text>
+        </block>
+      </view>
+    </view>
+    <view class="border-line" style="margin-top:0rpx;"></view>
+    <view class="reply-header-view fix-header" style="top:{{topBarHeight}}px" wx:if="{{fixedView}}">
+      <title class="reply-header-title-view">全部回复</title>
+      <view class="sort-view" bindtap="didClickSort">
+        <text class="iconfont paixushang sort-icon"></text>
+        <block wx:if="{{sort==1}}">
+          <text class="sort-title">最早回复</text>
+        </block>
+        <block wx:else>
+          <text class="sort-title">最晚回复</text>
+        </block>
+      </view>
+    </view>
+    <block wx:for="{{replyList}}" wx:key="item">
+      <template is="reply-cell" data="{{reply:item, replyIndex:index, myselfId:myselfId}}" data-index="{{index}}"></template>
+      <block wx:if="{{index != 0 && index % 10 == 0}}">
+        <ad unit-id="{{banner['reply-list']}}" ad-intervals="{{30}}"></ad>
+      </block>
+    </block>
+  </view>
+  <view class="loading-tip" wx:if="{{!loading}}">
+    <block wx:if="{{replyHasMore}}">
+      加载中...
+    </block>
+    <block wx:else>
+      {{replyList.length==0?'还没有留言，快去抢沙发':'没有更多留言了'}}
+    </block>
+  </view>
+</view>
+
+<view class="comment-area-view" style="{{isIpx?'height:124rpx;':'height:80rpx;'}}">
+  <button class="comment-button" bindtap="didClickComment">说两句...</button>
+  <text class="iconfont fenxiang share-icon"></text>
+  <button class="share-button" open-type="share"></button>
+</view>
+
+<view class="comment-input-view" wx:if="{{commentShow}}" catchtap="preventTap" catchtouchmove="preventTap">
+  <view class="comment-input-area-view" catchtap="preventInputAreaTap" catchtouchmove="preventInputAreaTap">
+    <text class="reply-user-text" wx:if="{{replyUser.length > 0}}">回复{{replyUser}}：</text>
+    <textarea class="comment-input" placeholder="说两句...(4~800个汉字)" placeholder-class="input-placeholder" maxlength="800" bindinput="onContentInput" value="{{content}}" fixed="{{true}}" auto-focus />
+    <view class="border-line"/>
+    <view class="publish-view">
+      <view class="comment-imags-select-view" hidden="{{images.length>0 || voiceId.length > 0}}">
+        <text class="iconfont tupian select-image-button" bindtap="didClickSelectImage"/>
+        <text class="iconfont yuyin select-yuyin-button" bindtap="didClickSelectVoice"/>
+      </view>
+      <view class="publish-images" wx:if="{{images.length > 0}}">
+        <view class="publish-image-item" wx:for="{{images}}" wx:key="item">
+          <image class="publish-image" src="{{item}}" bindtap="didClickPreviewUploadImage" data-index="{{index}}"/>
+          <text class="iconfont shanchu delete-button" bindtap="didClickDeleteImage" data-index="{{index}}"/>
+        </view>
+      </view>
+      <view class="publish-voice" wx:if="{{voiceId.length > 0}}">
+        <view class="audio-view">
+          <!-- 默认状态 未播放 -->
+          <view class='audio' bindtap='audioPlay' data-url="{{voiceUrl}}" data-type="record" wx:if="{{!currentPlay.playing}}">
+            <image class='ico' src='/image/yuyin-ico.png' />
+            <label class='time'>{{voiceDuration}}</label>
+          </view>
+
+          <!-- 当前正在播放状态 -->
+          <view class='audio' bindtap='audioStop' data-url="{{voiceUrl}}" data-type="record" wx:if="{{currentPlay.playing}}">
+            <image class='ico' src='/image/yuyin-gif.gif' />
+            <label class='time'>{{voiceDuration}}</label>
+          </view>
+          <text class="iconfont shanchu delete-voice-button" bindtap="didClickDeleteVoice"/>
+        </view>
+      </view>
+      <button class="send-button" bindtap="onConfirmSubmit">提交</button>
+    </view>
+    <view class="myRecode" hidden="{{!recordMode}}" style="padding-top:200rpx;">
+      <view class="recode" bindtap='recordClick'>
+        <text>{{recording ? '结束传音':'点按传音'}}</text>
+        <view class="ripple"></view>
+        <view class="ripple" animation="{{animationData1}}"></view>
+        <view class="ripple" animation="{{animationData2}}"></view>
+      </view>
+    </view>
+  </view>
+</view>

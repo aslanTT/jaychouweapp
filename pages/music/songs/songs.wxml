@@ -1,0 +1,34 @@
+<import src="../../../component/request-loading/loading.wxml"/>
+
+<import src="./song-cell/cell.wxml"/>
+
+<template is="request-loading" wx:if="{{loading}}"/>
+
+<view class="container" hidden="{{loading}}">
+  <view class="no-content" style="margin-top:400rpx;" wx:if="{{list.length == 0}}">
+    <view class="no-content-font">暂无列表</view>
+  </view>
+  <view class="content-view" style="margin-bottom: 90rpx;">
+    <view class="search-view" bindtap="didClickSearch">
+      <view class="search-border">
+        <text class="search-placeholder">搜索歌曲</text>
+      </view>
+    </view>
+    <block wx:for="{{list}}" wx:key="item">
+      <view class="music-cell-view">
+        <template is="music-cell" data="{{music:item,cellSelectMode:cellSelectMode,strategy:strategy}}"/>
+      </view>
+      <block wx:if="{{index == 5}}">
+        <ad unit-id="{{banner['song-list']}}" class="ad-banner" ad-intervals="{{30}}"></ad>
+      </block>
+    </block>
+    <view class="loading-tip" wx:if="{{list.length>0}}">
+      <block wx:if="{{hasMore}}">
+        加载中...
+      </block>
+      <block wx:else>
+        没有更多了
+      </block>
+    </view>
+  </view>
+</view>

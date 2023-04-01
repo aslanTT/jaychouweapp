@@ -1,0 +1,7 @@
+{
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "navigation": "/component/navigation/navigation",
+    "add-to-my-miniprogram": "/component/add-to-my-miniprogram/index"
+  }
+}

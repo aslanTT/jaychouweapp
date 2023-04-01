@@ -1,0 +1,12 @@
+<template name="album-cell">
+  <view class="album-cell" bindtap="didTapAlbumCell" data-album-id="{{album.objectId}}">
+    <image class="album-cover" lazy-load="true" src="{{album.covers[0]}}"></image>
+    <view class="album-right-view">
+      <view class="album-right-left-view">
+        <text class="album-title">{{album.name}}</text>
+        <text class="album-time">{{album.time}}</text>
+      </view>
+      <text class="album-score">{{album.score}}</text>
+    </view>
+  </view>
+</template>

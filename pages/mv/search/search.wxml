@@ -1,0 +1,6 @@
+<view class="container">
+  <view class="search-view">
+    <text class="iconfont sousuoxiangqing search-icon-size"></text>
+    <input class="search-text-input" placeholder-style="font-size:14px;color:#ccc" placeholder='输入关键字' bindinput='searchWordChange' confirm-type="search" bindconfirm="didClickSearchButton" auto-focus='{{true}}'></input>
+  </view>
+</view>

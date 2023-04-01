@@ -1,0 +1,25 @@
+<view class="container">
+  <view class='edit-container'>
+    <view class="a-item">
+      <view class="a-left-item">
+        <text class="iconfont avatarsetting setting-icon"></text>
+        <text class="item-title">头像</text>
+      </view>
+      <view class="a-right-item">
+        <image class='avatar-publish' src="{{avatar}}" bindtap="didClickSelectImage"></image>
+        <text class="iconfont auto-switch switch-icon" bindtap="didClickSwitchAvatar"/>
+      </view>
+    </view>
+    <view class="a-item">
+      <view class="a-left-item">
+        <text class="iconfont username setting-icon"></text>
+        <text class="item-title">昵称</text>
+      </view>
+      <view class="a-right-item">
+        <input class='a-input' bindblur="bindNicknameChange" placeholder='输入昵称' value="{{name}}"></input>
+        <text class="iconfont auto-switch switch-icon" bindtap="didClickSwitchNickname"/>
+      </view>
+    </view>
+  </view>
+  <button class="save-button" bindtap="didClickSave">保存</button>
+</view>

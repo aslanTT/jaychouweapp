@@ -1,0 +1,41 @@
+<import src="../../../component/request-loading/loading.wxml"/>
+<template is="request-loading" wx:if="{{loading}}"/>
+
+<wxs src="../component/utils/utils.wxs" module="util" />
+<view class="detail" hidden="{{loading}}">
+  <!-- video -->
+  <block wx:if="{{playEnable}}">
+    <view class="videoPlayer" style="height:{{videoHeight}}px;">
+        <video unit-id="adunit-220623b57c3c1f06" id="myVideo" style="height:{{videoHeight}}px" autoplay src="{{videoItem.url}}" poster="{{videoItem.cover}}" duration="{{videoItem.duration}}"></video>
+    </view>
+  </block>
+  <view class="content" style="margin-top:{{videoHeight}}px;margin-bottom:80rpx">
+    <!-- 视频的介绍 -->
+    <view class="introduce">
+      <view class="introduce-title-view">
+        <view class="introduce-title-left">
+          <text class="introduce-title">{{videoItem.title}}</text>
+          <text class="tag">{{util.formatInterval(videoItem.duration)}}</text>
+        </view>
+        <button class="introduce-title-right" open-type="share">
+          <image class="share-icon" src="/image/share.png"></image>
+        </button>
+      </view>
+      <text class="introduce-desc">{{videoItem.desc}}</text>
+    </view>
+    <!-- <ad unit-id="adunit-7c840997512b7dfb"></ad> -->
+    <view class="recommend">
+      <!-- 没有内容 -->
+      <view wx:if="{{recommend.length == 0}}" class="loadingText">
+        <text>暂时没有推荐内容</text>
+      </view>
+      <view wx:for="{{recommend}}" wx:key="data" class="recommend-item" bindtap="toDetail" data-item="{{item}}">
+        <image class="cover" src="{{item.cover}}"></image>
+        <view class="text">
+          <text class="text-title">{{item.title}}</text>
+          <text class="text-tag">{{util.formatInterval(item.duration)}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

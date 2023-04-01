@@ -1,0 +1,50 @@
+<view class="container">
+  <view class="edit-view">
+    <textarea class="content-input" placeholder="跟大家分享的(0~1000个汉字)" placeholder-class="input-placeholder" maxlength="1000" bindinput="onContentInput" value="{{content}}">
+      
+    </textarea>
+    <view class="border-line"/>
+    <view class="publish-view">
+      <view class="publish-image-view" hidden="{{medias.length>0 || voiceId.length > 0}}">
+        <text class="iconfont tupian select-image-button" bindtap="didClickSelectImage"/>
+        <text class="iconfont yuyin select-yuyin-button" bindtap="didClickSelectVoice"/>
+        <text class="iconfont shipin select-video-button" bindtap="didClickSelectVideo"/>
+      </view>
+      <view class="publish-images" wx:if="{{medias.length > 0}}">
+        <view class="publish-image-item" wx:for="{{medias}}" wx:key="item">
+          <image class="publish-image" src="{{item.url}}" wx:if="{{item.type == 'image'}}" bindtap="didClickPreviewImage" data-index="{{index}}"/>
+          <image class="publish-video-image" src="{{item.poster}}" wx:else="{{item.type == 'video'}}" bindtap="didClickPreviewImage" data-index="{{index}}"/>
+          <text class="iconfont shanchu delete-button" bindtap="didClickDeleteImage" data-index="{{index}}"/>
+          <text class="iconfont play video-icon" wx:if="{{item.type == 'video'}}"/>
+        </view>
+      </view>
+      <view class="publish-voice" wx:if="{{voiceId.length > 0}}">
+        <view class="audio-view">
+          <!-- 默认状态 未播放 -->
+          <view class='audio' bindtap='audioPlay' wx:if="{{!playing}}">
+            <image class='ico' src='/image/yuyin-ico.png' />
+            <label class='time'>{{voiceDuration}}</label>
+          </view>
+
+          <!-- 当前正在播放状态 -->
+          <view class='audio' bindtap='audioStop' wx:if="{{playing}}">
+            <image class='ico' src='/image/yuyin-gif.gif' />
+            <label class='time'>{{voiceDuration}}</label>
+          </view>
+          <text class="iconfont shanchu delete-voice-button" bindtap="didClickDeleteVoice"/>
+        </view>
+      </view>
+      <button class="publish-button" hover-class="hover-button" bindtap="onConfirmSubmit">发布</button>
+    </view>
+  </view>
+
+  <view class="myRecode" hidden="{{!recordMode}}">
+    <view class="recode" bindtouchstart='recordClick'>
+      <text>{{recording ? '结束传音':'点按传音'}}</text>
+      <view class="ripple"></view>
+      <view class="ripple" animation="{{animationData1}}"></view>
+      <view class="ripple" animation="{{animationData2}}"></view>
+    </view>
+  </view>
+
+</view>

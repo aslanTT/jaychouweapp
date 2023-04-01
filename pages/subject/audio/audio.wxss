@@ -1,0 +1,65 @@
+.voice-view {
+  margin-top: 20rpx;
+  width: 300rpx;
+}
+
+.audio-view {
+  position: relative;
+}
+
+.audio {  
+  padding: 20rpx; 
+  margin-left: 20rpx;
+  border-radius: 10rpx;
+  background-color: #ffffff;
+  border: 1px solid #f0f0f0; 
+  overflow: hidden; 
+}
+
+.audio .ico { 
+  width: 26rpx; 
+  height: 30rpx; 
+  float: left;
+  margin-left: 10rpx;
+}
+
+.audio .time {
+  float: right; 
+  font-size: 24rpx;
+  margin-right: 10rpx;
+  margin-left: 20rpx;
+}
+
+
+.myRecode{
+  padding-top:500rpx;
+  text-align: center;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width:100%;
+}
+
+.myRecode .recode{
+  display: inline-block;
+  width:200rpx;
+  height:200rpx;
+  background: #B64A48;
+  border-radius: 50%;
+  text-align: center;
+  color:#fff;
+  line-height: 200rpx;
+  position: relative;
+}
+
+.ripple {
+  position: absolute;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  border-radius: 50%;
+  border:2px solid #e65b0b;
+}

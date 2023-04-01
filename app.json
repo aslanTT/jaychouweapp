@@ -1,0 +1,86 @@
+{
+  "pages": [
+    "pages/music/list/list",
+    "pages/music/play/play",
+    "pages/essay/list/list",
+    "pages/essay/search/search",
+    "pages/essay/result/result",
+    "pages/essay/publish/publish",
+    "pages/subject/list/list",
+    "pages/subject/publish/publish",
+    "pages/subject/detail/detail",
+    "pages/notice/list/list",
+    "pages/message/message",
+    "pages/mine/mine/mine",
+    "pages/mine/setting/setting",
+    "pages/mine/apps/apps",
+    "pages/music/lyric/lyric",
+    "pages/subject/user/user",
+    "pages/music/album/album",
+    "pages/music/search/search",
+    "pages/music/result/result",
+    "pages/mine/listened/listened",
+    "pages/mine/collect/collect",
+    "pages/pic/list/list",
+    "pages/music/postcard/postcard",
+    "pages/essay/web/web",
+    "pages/redirect/redirect",
+    "pages/music/songs/songs",
+    "pages/mv/list/list",
+    "pages/mv/detail/detail",
+    "pages/mv/search/search",
+    "pages/mv/result/result",
+    "pages/ad/ad",
+    "pages/music/remember/remember",
+    "pages/praise/praise"
+  ],
+  "requiredBackgroundModes": [
+    "audio"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#B64A48",
+    "navigationBarTitleText": "杰伦粉丝圈",
+    "navigationBarTextStyle": "white",
+    "backgroundColor": "#f0f0f0"
+  },
+  "tabBar": {
+    "color": "#808080",
+    "selectedColor": "#B64A48",
+    "borderStyle": "white",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/music/list/list",
+        "iconPath": "image/music_default.png",
+        "selectedIconPath": "image/music_select.png",
+        "text": "音乐"
+      },
+      {
+        "pagePath": "pages/essay/list/list",
+        "iconPath": "image/news_default.png",
+        "selectedIconPath": "image/news_select.png",
+        "text": "文章"
+      },
+      {
+        "pagePath": "pages/mv/list/list",
+        "iconPath": "image/mv_default.png",
+        "selectedIconPath": "image/mv_select.png",
+        "text": "MV"
+      },
+      {
+        "pagePath": "pages/subject/list/list",
+        "iconPath": "image/chat_default.png",
+        "selectedIconPath": "image/chat_select.png",
+        "text": "交流"
+      },
+      {
+        "pagePath": "pages/mine/mine/mine",
+        "iconPath": "image/mine_default.png",
+        "selectedIconPath": "image/mine_select.png",
+        "text": "我的"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

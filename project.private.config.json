@@ -1,0 +1,89 @@
+{
+  "setting": {
+    "compileHotReLoad": true
+  },
+  "condition": {
+    "miniprogram": {
+      "list": [
+        {
+          "name": "pages/subject/detail/detail",
+          "pathName": "pages/subject/detail/detail",
+          "query": "subjectId=60fadfe91de21d3e071f6d6",
+          "scene": null
+        },
+        {
+          "name": "pages/message/message",
+          "pathName": "pages/message/message",
+          "query": "userId=6115426fb7612951d137fdec",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/music/play/play",
+          "query": "musicId=61ec77ef54971e406acfbf22",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/essay/detail/detail",
+          "query": "essayId=61fcdc0a54971e406ae16c06",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/music/album/album",
+          "query": "albumId=61ec0ea15454f04b8f8edc74",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/music/play/play",
+          "query": "musicId=6280b6f44fb5b8572d28ba7e",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "朋友圈首页",
+          "pathName": "pages/music/list/list",
+          "query": "",
+          "launchMode": "default",
+          "scene": 1154
+        },
+        {
+          "name": "朋友圈播放详情页",
+          "pathName": "pages/music/play/play",
+          "query": "musicId=61ec7826328d186424af1c90",
+          "launchMode": "default",
+          "scene": 1154
+        },
+        {
+          "name": "朋友圈歌曲列表",
+          "pathName": "pages/music/songs/songs",
+          "query": "strategy=2",
+          "launchMode": "default",
+          "scene": 1154
+        },
+        {
+          "name": "",
+          "pathName": "pages/essay/web/web",
+          "query": "essayId=62bc72335ee85713b0a799dc",
+          "launchMode": "default",
+          "scene": 1155
+        },
+        {
+          "name": "朋友圈mv详情页",
+          "pathName": "pages/mv/detail/detail",
+          "query": "mvId=630b53fd7f0b9738b34e30f8",
+          "launchMode": "default",
+          "scene": 1154
+        }
+      ]
+    }
+  },
+  "description": "项目私有配置文件。此文件中的内容将覆盖 project.config.json 中的相同字段。项目的改动优先同步到此文件中。详见文档：https://developers.weixin.qq.com/miniprogram/dev/devtools/projectconfig.html",
+  "libVersion": "2.17.0",
+  "projectname": "weapp"
+}

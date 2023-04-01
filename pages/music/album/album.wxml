@@ -1,0 +1,50 @@
+<import src="../../../component/request-loading/loading.wxml"/>
+
+<template is="request-loading" wx:if="{{loading}}"/>
+
+<image src="{{album.covers[0]}}" class="background_img" hidden="{{loading}}"></image>
+
+<view class="body">
+  <view class="weapp-title" style="margin-top:{{isIpx?'120rpx':'70rpx'}};" bindtap="didClickBackButton">
+    <text class="iconfont fanhui back-icon" />
+  </view>
+
+  <view class="album-top-view">
+    <view class="album-left-view">
+      <view class="album-cover-bg" wx:if="{{album.covers}}">
+        <image class="album-cover" src="{{album.covers[0]}}"></image>
+      </view>
+    </view>
+    <view class="album-info-view">
+      <text class="album-name">{{album.name}}</text>
+      <text class="singer-name">歌手: {{album.singer.name}}</text>
+      <text class="publish-time">发行时间: {{album.time}}</text>
+      <view class="album-desc-view" bindtap="didClickAlbumDesc">
+        <text class="album-desc">{{album.desc}}</text>
+      </view>
+    </view>
+  </view>
+  <view class="album-song-view">
+    <!-- <text class="song-view-title">专辑歌曲</text> -->
+    <view class="song-item-view" wx:for="{{songList}}" wx:key="item" bindtap="didClickMusic" data-music-id="{{item.objectId}}">
+      <view class="item-info-view">
+        <text class="index-view">{{index+1}}</text>
+        <view class="song-view">
+          <text class="song-name">{{item.name}}</text>
+          <text class="song-duration">{{item.durationShow}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<page-container show="{{popDesc}}" position="center">
+  <view class="mask"/>
+  <image src="{{album.covers[0]}}" class="background_img"></image>
+  <view class="desc-container-view">
+    <text class="iconfont fanhui back-icon" bindtap="didClickBack"/>
+    <scroll-view scroll-y="true" class="desc-scroll-view">
+    <text>{{album.desc}}</text>
+    </scroll-view>
+  </view>
+</page-container>

@@ -1,0 +1,53 @@
+
+.album-cell {
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  min-width: 100%;
+}
+
+.album-cover {
+  margin: 20rpx;
+  margin-left: 26rpx;
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 8rpx;
+  border: 1rpx solid #e0e0e0;
+}
+
+.album-right-view {
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.album-right-left-view {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.album-title {
+  /* margin:20rpx; */
+  margin-top: 20rpx;
+  font-size: 30rpx;
+  color: #383838;
+}
+
+.album-time {
+  font-size: 26rpx;
+  color: #999999;
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+}
+
+.album-score {
+  font-size: 42rpx;
+  color: goldenrod;
+  margin-right: 26rpx;
+}

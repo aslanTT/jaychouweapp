@@ -1,0 +1,11 @@
+<view class="container">
+  <view class="apps-list">
+    <view class='apps-cell' style="border-bottom: 1px #f0f0f0 solid;" hover-class='apps-hover-cell' bindtap='didClickMiniprograme' data-appid="{{item.appid}}" wx:for="{{apps}}" wx:key="item">
+      <view class="apps-info">
+        <image class="apps-icon" src="{{item.logo}}"></image>
+        <text class='apps-cell-title'>{{item.name}}</text>
+      </view>
+      <text class="iconfont arrowright right-icon"/>
+    </view>
+  </view>
+</view>

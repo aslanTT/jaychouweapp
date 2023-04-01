@@ -1,0 +1,6 @@
+<view class="box-view" wx:if="{{show}}" style="right:{{marginRight-40}}px; top:{{marginTop}}px;">
+	<view class="arrow" style="margin-right:35px;"></view>
+  <view class="body content" bindtap="hide">
+    <slot name="content"></slot>
+  </view>
+</view>

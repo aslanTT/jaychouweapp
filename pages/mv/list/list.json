@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "video-list": "../component/videoList/videoList",
+    "navigation": "/component/navigation/navigation"
+  },
+  "navigationStyle": "custom"
+}

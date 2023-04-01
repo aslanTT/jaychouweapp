@@ -1,0 +1,17 @@
+<view class="container">
+  <view class="circle-view">
+    <view class="circle"></view>
+    <image class="logo-image" src="/image/logo.jpeg"></image>
+    <text class="app-name"> JayChou 粉丝圈</text>
+  </view>
+  <view class="praise-price">
+    <view class='title'>您的赞赏是我维护的动力，感谢！</view>
+    <view class="price-list">
+      <view class="item" wx:for="{{prices}}" wx:key="item" data-item="{{item}}" bindtap="didClickPrice">
+        <view class="{{selected==item?'price-box-active':'price-box'}}">
+          <em><text class="price">{{item}}</text>  元</em> 
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
